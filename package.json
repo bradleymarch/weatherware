@@ -14,7 +14,7 @@
   "scripts": {
     "test": "mocha",
     "start": "node server.js",
-    //"app": "serene-taiga-87972"
+    "app": "serene-taiga-87972"
   },
   "author": "",
   "license": "ISC"
