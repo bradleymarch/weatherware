@@ -1,6 +1,11 @@
 $(function() {
 
-  
+const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
+
+const OPEN_WEATHER_MAP_API_KEY_URL 
+= "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=" + OPEN_WEATHER_MAP_API_KEY;
+
+
 
 const MOCK_FORECAST = [
   {
@@ -126,11 +131,12 @@ const MOCK_FORECAST = [
       getAndDisplayForecast();
 
     });
-    $(function() {
-      addEventListeners();
-    });
+    
 
   });
+  $(function() {
+      addEventListeners();
+    });
 
 
 
