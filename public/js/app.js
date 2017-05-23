@@ -1,144 +1,191 @@
 $(function() {
 
-const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
+  const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
 
-const OPEN_WEATHER_MAP_API_KEY_URL 
-= "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=" + OPEN_WEATHER_MAP_API_KEY;
+  const OPEN_WEATHER_MAP_API_KEY_URL 
+  = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=" + OPEN_WEATHER_MAP_API_KEY;
 
 
 
-const MOCK_FORECAST = [
-  {
-    day: 'Today',
-    forecast: [
-      {
-        time: 'Morning',
-        temp: 75,
-        condition: 'Sunny',
-        clothes: {
+  const MOCK_FORECAST = [
+    {
+      day: 'Today',
+      forecast: [
+        {
+          time: 'Morning',
+          temp: 75,
+          condition: 'Sunny',
+          clothes: {
 
-          upperBody: 'short',
-          lowerBody: 'short',
-          jacket: 'none',
+            upperBody: 'short',
+            lowerBody: 'short',
+            jacket: 'none',
+          }
+        },
+        {
+          time: 'Afternoon',
+          temp: 79,
+          condition: 'Sunny',
+          clothes: {
+
+            upperBody: 'short',
+            lowerBody: 'short',
+            jacket: 'none',
+          }
+        },
+        {
+          time: 'Evening',
+          temp: 68,
+          condition: 'Partly Cloudy',
+          clothes: {
+
+            upperBody: 'short',
+            lowerBody: 'long',
+            jacket: 'none',
+          }      
+        },
+      ],
+    },
+
+    {
+
+      day: 'Tomorrow',
+      forecast: [
+        {
+          time: "Morning",
+          temp: 56,
+          condition: 'Cloudy',
+          clothes: {
+
+            upperBody: 'long',
+            lowerBody: 'long',
+            jacket: 'light',
+          }
+        },
+
+        {
+          time: 'Afternoon',
+          temp: 68,
+          condition: 'Sunny',
+          clothes: {
+
+            upperBody: 'short',
+            lowerBody: 'long',
+            jacket: "none",
+          }
+        },
+
+        {
+          time: 'Evening',
+          temp: 70,
+          condition: 'Sunny',
+          clothes: {
+
+            upperBody: 'short',
+            lowerBody: 'long',
+            jacket: "none",
+          }
         }
-      },
-      {
-        time: 'Afternoon',
-        temp: 79,
-        condition: 'Sunny',
-        clothes: {
-
-          upperBody: 'short',
-          lowerBody: 'short',
-          jacket: 'none',
-        }
-      },
-      {
-        time: 'Evening',
-        temp: 68,
-        condition: 'Partly Cloudy',
-        clothes: {
-
-          upperBody: 'short',
-          lowerBody: 'long',
-          jacket: 'none',
-        }      
-      },
-    ],
-  },
-
-  {
-
-    day: 'Tomorrow',
-    forecast: [
-      {
-        time: "Morning",
-        temp: 56,
-        condition: 'Cloudy',
-        clothes: {
-
-          upperBody: 'long',
-          lowerBody: 'long',
-          jacket: 'light',
-        }
-      },
-
-      {
-        time: 'Afternoon',
-        temp: 68,
-        condition: 'Sunny',
-        clothes: {
-
-          upperBody: 'short',
-          lowerBody: 'long',
-          jacket: "none",
-        }
-      },
-
-      {
-        time: 'Evening',
-        temp: 70,
-        condition: 'Sunny',
-        clothes: {
-
-          upperBody: 'short',
-          lowerBody: 'long',
-          jacket: "none",
-        }
-      }
 
 
 
-    ]
+      ]
+    }
+
+
+  ];
+/**
+ * API functions
+ */
+  const API_URL = '/api';
+
+  function getForecast() {
+    return $.ajax({
+      url: `${API_URL}/forecast`,
+      method: "GET",
+      dataType: "json",
+    });
+  }
+
+  function updateSettings(newSettings) {
+    return $.ajax({
+      url: API_URL,
+      method: 'PATCH',
+      data: newSettings,
+    });
   }
 
 
-];
-
-
-// this happens after enter a location to SET
+  /**
+   * Display functions
+   */
   function getForecast(callbackFn) {
-      setTimeout(function(){ callbackFn(MOCK_FORECAST)}, 100);
+        setTimeout(function(){ callbackFn(MOCK_FORECAST)}, 100);
+  }
+  
+  function displayApiError(error) {
+     $(".error-notice").text(error);
   }
 
-  // this function stays the same when we connect
-  // to real API later
-  function displayForecast(data) {
-      for (const item of data) {
-         $('body').append(
-          '<p>' + item.time + '</p>');
-         console.log(item);
-      }
+  function displayInvalidLocationError() {
+    $(".error-notice").text("The location you entered is invalid, please select another one.");
   }
 
-  // this function can stay the same even when we
-  // are connecting to real API
+  function displayForecast() {
+    $(".js-forecast").html(...);
+  }
+     /*function displayForecast(data) {
+        for (const item of data) {
+           $('body').append(
+            '<p>' + item.time + '</p>');
+        
+        }
+  }
+  */
   function getAndDisplayForecast() {
-      getForecast(displayForecast);
+    getForecast().then(displayForecast, displayApiError);
   }
 
 
+  /**
+   * Event handlers
+   */
 
-  $(function(addEventListeners) {
+  function handleSignInFormSubmit(event) {
 
-    $(".js-sign-in-button").on("submit", function(event) {
+        $(".js-sign-in-view").addClass("hidden");  
+        $(".js-profile-view").removeClass("hidden"); 
+  };
 
-      $(".js-sign-in-view").addClass("hidden");  
-      $(".js-profile-view").removeClass("hidden"); 
+  function handleLocationFormSubmit(event) {
+    event.preventDefault();
+
+    $form = $(event.currentTarget);
+    $locationInput = $form.find("js-location-input");
+
+    const newSettings = { location: $locationInput.val() };
+
+    updateSettings(newSettings).then(getAndDisplayForecast, displayApiError);
+  }
+  function handleTempSensitivityChange(event) {
+          event.preventDefault();
+
+  }
+
+  function handleOutfitStyleChange(event) {
+
+          event.preventDefault();
+  }
+
+  /**
+   * Initialize the app
+   */
+  $(function onReady() {
+
+      $(".js-sign-in-form").on("submit", handleSignInFormSubmit);
+
+      $(".js-location-form").on("submit", handleLocaitonFormSubmit);
+
     });
-
-    $(".js-location-button").on("click", function() {
-      getAndDisplayForecast();
-
-    });
-    
-
-  });
-  $(function() {
-      addEventListeners();
-    });
-
-
-
 
 });
