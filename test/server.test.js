@@ -13,27 +13,9 @@ const should = chai.should();
 // see: https://github.com/chaijs/chai-http
 chai.use(chaiHttp);
 
-
 describe('first-test', function() {
 
-  // Before our tests run, we activate the server. Our `runServer`
-  // function returns a promise, and we return the that promise by
-  // doing `return runServer`. If we didn't return a promise here,
-  // there's a possibility of a race condition where our tests start
-  // running before our server has started.
-  
-
-  // although we only have one test module at the moment, we'll
-  // close our server at the end of these tests. Otherwise,
-  // if we add another test module that also has a `before` block
-  // that starts our server, it will cause an error because the
-  // server would still be running from the previous tests.
  
-
-  // test strategy:
-  //   1. make request to `/shopping-list`
-  //   2. inspect response object and prove has right code and have
-  //   right keys in response object.
   it('should respond with html', function() {
     // for Mocha tests, when we're dealing with asynchronous operations,
     // we must either return a Promise object or else call a `done` callback
@@ -47,3 +29,89 @@ describe('first-test', function() {
       });
    });
 });
+  describe('GET endpoint', function() {
+
+    it('should GET forecast for set location', function() {
+  
+      let res;
+      return chai.request(app)
+        .get('/forecast')
+        .then(function(_res) {
+          // so subsequent .then blocks can access resp obj.
+          res = _res;
+          res.should.have.status(200);
+          // otherwise our db seeding didn't work
+          res.body.forecast.should.have.length.of.at.least(1);
+          return Forecast.count();
+        })
+        .then(function(count) {
+          res.body.forecast.should.have.length.of(count);
+        });
+    });
+
+
+    it('should return forecast with right fields', function() {
+
+      let resForecast;
+      return chai.request(app)
+        .get('/forecast')
+        .then(function(res) {
+          res.should.have.status(200);
+          res.should.be.json;
+          res.body.forecast.should.be.a('array');
+          res.body.forecast.should.have.length.of.at.least(1);
+
+          res.body.forecast.forEach(function(forecast) {
+            forecast.should.be.a('object');
+            forecast.should.include.keys(
+              'location', 'time', 'temperature', 'description');
+          });
+          resForecast = res.body.forecast[0];
+          return Forecast.findById(resForecast.id);
+        })
+        .then(function(restaurant) {
+
+          resForecast.temp.should.equal(forecast.location);
+          resForecast.time.should.equal(forecast.time);
+          resForecast.temp.should.equal(forecast.temp);
+          resForecast.description.should.equal(forecast.description);
+          
+        });
+    });
+  });
+  describe('PUT endpoint', function() {
+
+
+    it('should update location you send over', function() {
+      const updateData = {
+        location: 'Dallas, TX',
+        
+      };
+
+      return Location
+        .findOne()
+        .exec()
+        .then(function(location) {
+          updateData.id = location.id;
+
+          // make request then inspect it to make sure it reflects
+          // data we sent
+          return chai.request(app)
+            .put(`/location/${location.id}`)
+            .send(updateData);
+        })
+        .then(function(res) {
+          res.should.have.status(204);
+
+          return Location.findById(updateData.id).exec();
+        })
+        .then(function(forecast) {
+          location.id.should.equal(updateData.id);
+
+        });
+      });
+  });
+
+
+
+

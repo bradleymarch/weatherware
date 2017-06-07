@@ -3,95 +3,95 @@
 <head>
 	<title>Weatherwear</title>
 	<link rel="stylesheet" type="text/css" href="./css/app.css">
-	<link href="https://fonts.googleapis.com/css?family=Chango|Pompiere|Tangerine" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-<link rel="icon" 
-      type="image/png" 
-      href="./images/cloud.png">
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Proza+Libre" rel="stylesheet">
+	<link rel="icon" 
+	type="image/png" 
+	href="./images/cloud.png">
 </head>
 <body>
 
-		<div class="sign-in-view js-sign-in-view">
+	<div class="sign-in-view js-sign-in-view">
 		<nav>
 
 		</nav>
-			<div class="heading">Weatherwear</div>
+		<div class="heading">Weatherwear</div>
 
-			<div class="sign-in-container js-sign-in-container sign-in-overlay js-sign-in-overlay">
+		<div class="sign-in-container js-sign-in-container sign-in-overlay js-sign-in-overlay">
 
-				<h3 class="sign-in-logo js-sign-in-logo">Sign In</h3>
-				<form class="sign-in-form js-sign-in-form">
-					<div class="form-group">      
-						<input class="floating-label-input" id="sign-in-form-username" type="text" required>
-						<span class="highlight"></span>
-						<span class="bar"></span>
-						<label class="floating-label" for="sign-in-form-username">Username</label>
-					</div>
+			<h3 class="sign-in-logo js-sign-in-logo">Sign In</h3>
+			<form class="sign-in-form js-sign-in-form">
+				<div class="form-group">      
+					<input class="floating-label-input" id="sign-in-form-username" type="text" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="floating-label" for="sign-in-form-username">Username</label>
+				</div>
 
-					<div class="form-group">      
-						<input class="floating-label-input" id="sign-in-form-password" type="password" required>
-						<span class="highlight"></span>
-						<span class="bar"></span>
-						<label class="floating-label" for="sign-in-form-password">Password</label>
-					</div>
-					<button class="sign-in-button js-sign-in-button" type="submit">Enter</button>
-				</form>
-				<a class="register js-register js-hidden" href="www.thinkful.com">Not registered?  Click here</a>
+				<div class="form-group">      
+					<input class="floating-label-input" id="sign-in-form-password" type="password" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="floating-label" for="sign-in-form-password">Password</label>
+				</div>
+				<button class="sign-in-button js-sign-in-button" type="submit">Enter</button>
+			</form>
+			<a class="register js-register js-hidden" href="www.thinkful.com">Not registered?  Click here</a>
 
-			</div>
 		</div>
+	</div>
 
 
 	
-			<div class="profile-view js-profile-view hidden">
-				<!--add a hidden class above later on-->
-				<div class="sidebar sidebar-overlay">
+	<div class="profile-view js-profile-view">
+		<!--add a hidden class above later on-->
+		<nav class="profile-nav"></nav>
+		<div class="sidebar sidebar-overlay">
 
-					<h2 class="settings-title">Settings</h2>
-					<h3 class="settings-headers">Location</h3>
-					<form class="js-location-form">
-						<input pattern="([A-Za-z.-]+)+,[ ]([A-Za-z.-]+)" id="location-form-id" type="text" class="location-input js-location-input" placeholder="i.e. Houston, TX">
-						<button class="location-button js-location button" type="search">Set</button>
-					</form> 
-					<h3 class="settings-headers">Temp Sensitivity</h3>
-					<label class="radio-label-font">Always cold:
-						<input name="temp-box" class="temp-box-class" id="temp-box1" type="radio"></label>
-						<br>
-					<label class="radio-label-font">Always warm:
-						<input name="temp-box" class="temp-box-class" id="temp-box2" type="radio"></label>
-						<br>
+			<h2 class="settings-title">Settings</h2>
+			<h3 class="settings-headers">Location</h3>
+			<form class="js-location-form">
+				<input pattern="(\d{5}([\-]\d{4})?)" id="location-form-id" type="text" class="location-input js-location-input" placeholder="Zipcode">
+				<button class="location-button js-location button" type="search">Set</button>
+			</form> 
+			<h3 class="settings-headers">Controls</h3>
+			<label class="radio-label-font">Always cold:
+				<input name="temp-box" class="temp-box-class" id="temp-box1" type="radio"></label>
+				<br>
+				<label class="radio-label-font">Always warm:
+					<input name="temp-box" class="temp-box-class" id="temp-box2" type="radio"></label>
+					<br>
 					<label class="radio-label-font">Neutral:
 						<input name="temp-box" class="temp-box-class" id="temp-box3" type="radio"></label>
 						
-					<h3 class="settings-headers">Outfit Style</h3>
-					<label class="radio-label-font">Female:
-						<input name="style-box" class="style-box-class" id="style-box1" type="radio"></label>
-						<br>
-					<label class="radio-label-font">Male:
-						<input name="style-box" class="style-box-class" id="style-box2" type="radio"></label>
-						<br>
-					<label class="radio-label-font">Neutral:
-						<input name="style-box" class="style-box-class" id="style-box3" type="radio"></label>
-					
-				</div>
+						<h3 class="settings-headers">Gender</h3>
+						<label class="radio-label-font">Female:
+							<input name="style-box" class="style-box-class" id="style-box1" type="radio"></label>
+							<br>
+							<label class="radio-label-font">Male:
+								<input name="style-box" class="style-box-class" id="style-box2" type="radio"></label>
+								<br>
+								<label class="radio-label-font">Neutral:
+									<input name="style-box" class="style-box-class" id="style-box3" type="radio"></label>
+									
+								</div>
 
-				<div class="main">
-					<section class="profile-heading-div">
+								<div class="main">
+									<section class="profile-heading-div">
 
-						<h1 class="my-weatherwear-heading">My Weatherwear</h1>
-					</section>
-					<p  class="today">Today's Forecast</p>
-					<section class="forecast-data js-forecast-data forecast-data-overlay">
-						<button type="button" class="arrow-up"></button>
-						<img src="./images/figure.png" alt="this should be a sitck figure" class="figure">
-						<button type="button" class="arrow-down"></button>
-					</section>	
-				<button class="tomorrow-button js-tomorrow-button" type="button">Tomorrow?</button>
-				</div>
-		</div>
-	
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="./js/app.js"></script>
-	</body>
+										<h1 class="my-weatherwear-heading">My Weatherwear</h1>
+									</section>
+									<p  class="today">Today's Forecast</p>
+									<section class="forecast-data js-forecast-data forecast-data-overlay">
+										<button type="button" class="arrow-up"></button>
+										<img src="./images/figure.png" alt="this should be a sitck figure" class="figure">
+										<button type="button" class="arrow-down"></button>
+									</section>	
+									<button class="tomorrow-button js-tomorrow-button" type="button">Tomorrow?</button>
+								</div>
+							</div>
+							
+							<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+							<script src="./js/app.js"></script>
+						</body>
 
-	</html>
+						</html>
