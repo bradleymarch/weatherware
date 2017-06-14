@@ -10,12 +10,40 @@
 </head>
 <body>
 
-	<div class="sign-in-view js-sign-in-view">
-		<nav>
-
+	<div id="landing_view" class="landing-view js-landing-view">
+		<nav class="navbar">
+		
+		<a href="#landing_view">Weatherwear</a>
+		<a href="#about_view">About</a>
+		<a href="#sign_in_view">Sign In</a>
+		<a href="#profile_view">MyWeatherwear</a>
+		<a href="#sign_in_view">Sign Up</a>
+		
 		</nav>
 		<div class="heading">Weatherwear</div>
+		<section class="landing-about">
+			<div class="testimonial1 animate-flicker-testimonials">"This looks like a really solid <br>app idea!" <br><br>- Robert W</div>
+			<div class="testimonial2 animate-flicker-testimonials">"Yeah, my wife is always asking me <br> to translate the forecast for her." <br><br>- Wes M</div>
+			<p class="animate-flicker heading-subtitle">Simplify the weather forecast</p>
+		</section>
+		</div>
+	<div id="about_view" class="about-view js-about-view">
+	<div class="empty-about-space"></div>
+		<h1 class="about-heading">About</h1>
+			<div class="about-content">
+				<br>
+				<p>Welcome to Weatherwear!  Weatherwear is designed to simplify your life.  How do we do it?  Let me explain.</p>
+				<br><hr class="horizontal-line-about"><br>
+				<p>Weatherwear takes forecast data for your location (from the Open Weather Map API) and provides you with what you need to know MOST about any forecast...  WHAT.  TO.  WEAR! </p>
+				<br><hr class="horizontal-line-about"><br>
+				<p>Sign up for a FREE account, SET your location, and update your controls.  That's it.  Happy Weathering! </p>
+			</div>
 
+
+
+	</div>
+	<div id="sign_in_view" class="sign-in-view js-sign-in-view">
+	<div class="empty-sign-in-space"></div>
 		<div class="sign-in-container js-sign-in-container sign-in-overlay js-sign-in-overlay">
 
 			<h3 class="sign-in-logo js-sign-in-logo">Sign In</h3>
@@ -35,24 +63,27 @@
 				</div>
 				<button class="sign-in-button js-sign-in-button" type="submit">Enter</button>
 			</form>
-			<a class="register js-register js-hidden" href="www.thinkful.com">Not registered?  Click here</a>
+			<a class="register js-register js-hidden" href="www.thinkful.com">Not registered? Click here</a>
 
 		</div>
 	</div>
 
 
 	
-	<div class="profile-view js-profile-view">
+	<div id="profile_view" class="profile-view js-profile-view">
 		<!--add a hidden class above later on-->
-		<nav class="profile-nav"></nav>
+		<nav class="profile-nav" id="myTopNav"></nav>
 		<div class="sidebar sidebar-overlay">
 
 			<h2 class="settings-title">Settings</h2>
 			<h3 class="settings-headers">Location</h3>
-			<form class="js-location-form">
-				<input pattern="(\d{5}([\-]\d{4})?)" id="location-form-id" type="text" class="location-input js-location-input" placeholder="Zipcode">
-				<button class="location-button js-location button" type="search">Set</button>
-			</form> 
+			      <form onsubmit="handleLocationFormSubmit(), getForecast()">
+            <input pattern="(\d{5}([\-]\d{4})?)" id="location-input-id" type="text" class="location-input" placeholder="Zipcode">
+            <button class="location-button js-location button" type="search">Set</button>
+            
+        </form>
+        
+        <br>
 			<h3 class="settings-headers">Controls</h3>
 			<label class="radio-label-font">Always cold:
 				<input name="temp-box" class="temp-box-class" id="temp-box1" type="radio"></label>
@@ -62,7 +93,8 @@
 					<br>
 					<label class="radio-label-font">Neutral:
 						<input name="temp-box" class="temp-box-class" id="temp-box3" type="radio"></label>
-						
+						<br>
+						<br>
 						<h3 class="settings-headers">Gender</h3>
 						<label class="radio-label-font">Female:
 							<input name="style-box" class="style-box-class" id="style-box1" type="radio"></label>
@@ -72,7 +104,8 @@
 								<br>
 								<label class="radio-label-font">Neutral:
 									<input name="style-box" class="style-box-class" id="style-box3" type="radio"></label>
-									
+								<br>
+								<br>
 								</div>
 
 								<div class="main">
@@ -82,8 +115,12 @@
 									</section>
 									<p  class="today">Today's Forecast</p>
 									<section class="forecast-data js-forecast-data forecast-data-overlay">
+									<p class="temp-conditions">
+									Ave Temp: 80 degrees <br>
+									Conditions: Partly Cloudy + Rain
+									</p>
 										<button type="button" class="arrow-up"></button>
-										<img src="./images/figure.png" alt="this should be a sitck figure" class="figure">
+										<img id="blank-figure" src="./images/figure.png" alt="this should be a sitck figure" class="figure js-figure">
 										<button type="button" class="arrow-down"></button>
 									</section>	
 									<button class="tomorrow-button js-tomorrow-button" type="button">Tomorrow?</button>

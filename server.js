@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const { merge } = require("lodash");
 
 const app = express();
+app.use(express.static("public"));
 const {PORT, DATABASE_URL, OPEN_WEATHER_MAP_API_KEY} = require("./config");
 
 mongoose.Promise = global.Promise;
