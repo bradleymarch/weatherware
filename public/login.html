@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WeatherWear</title>
+	<link rel="stylesheet" type="text/css" href="./css/app.css">
+<link href="https://fonts.googleapis.com/css?family=Gruppo|Londrina+Outline" rel="stylesheet">	
+<link rel="icon" 
+	type="image/png" 
+	href="./images/cloud.png">
+</head>
+<body>
+<div id="login_view" class="login-view js-login-view">
+		<nav id="myTopNav" class="navbar responsive">
+		
+		<a href="index.html">WeatherWear</a>
+		<a href="about.html">About</a>
+		<a href="login.html">Login</a>
+		<a href="profile.html">MyWeatherWear</a>
+		<a href="register.html" class=".js-register-link">Register</a>
+			
+		</nav>
+	<div class="empty-login-space"></div>
+		<div class="login-container js-login-container login-overlay js-login-overlay">
+
+			<h3 class="login-logo js-login-logo">Login</h3>
+			<form class="login-form js-login-form">
+				<div class="form-group">      
+					<input class="floating-label-input" id="login_form_username" type="text" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="floating-label" for="login_form_username">Username</label>
+				</div>
+
+				<div class="form-group">      
+					<input class="floating-label-input" id="login_form_password" type="password" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label class="floating-label" for="login_form_password">Password</label>
+				</div>
+				<button class="login-button js-login-button" type="submit">Enter</button>
+			</form>
+
+			<a href="register.html" class="register js-register">Not registered? Click here</a>
+				<div class="error-message js-error-message"></div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./js/login.js">	
+	</script>
+</body>
+</html>

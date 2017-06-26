@@ -5,9 +5,9 @@
 
 html {
 	/*background: url("background.jpg") no-repeat center center fixed;*/
-	font-family: 'Cormorant Garamond', serif;	
+	font-family: 'Gruppo', cursive;
+	-webkit-animation: fadein 2s;
 	color: white;
-	-webkit-animation: fadein 3s;
 
 }
 
@@ -21,12 +21,19 @@ body {
 	to   { opacity: 1; }
 
 }
+
+
+#forecast {
+
+	font-size: 20px;
+	color: white;
+}
 .empty-about-space {
-	height: 80px;
+	height: 100px;
 	width: 100%;
 }
 .about-heading {
-
+	font-family: 'Londrina Outline', cursive;
 	margin-top: 0;
 	font-size: 48px;
 }
@@ -42,6 +49,7 @@ body {
 		background: url("background.jpg") no-repeat center center fixed;
 		height: 782px;
 		width: 100%;
+		
 }
 
 .about-view {
@@ -57,7 +65,7 @@ body {
 
 	display: inline-block;
     height: 1px;
-    width: 50%;
+    width: 38%;
     text-align: center;
     border: 0;
     border-top: 1px solid #176D81;
@@ -65,66 +73,127 @@ body {
     padding: 0;
 
 }
+
+.bounceInUp {
+  animation-name: bounceInUp;
+}
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .navbar {
 	position: fixed;
 	width: 100%;
-	height: 60px;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 36px;
 	color: white;
 	background-color: white;
-	opacity: 0.85;
 	display: inline-block;
 	z-index: 1000;
 
 }
 .heading-subtitle {
-	margin: 0 auto;
-	font-size: 40px;
-	padding: 5px 0 320px 0;
+	margin: 10px auto;
+	font-size: 36px;
+	padding: 5px 0 0 0;
 	text-align: center;
 }
 .navbar a {
 	display: inline-block;
-	color: #0D3446;
+	color: #71ADB5;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 18px;
 	text-decoration: none;
 	/*margin-top: 20px;
 	margin-left: 170px;*/
-	border-top: 20px;
-	margin: 20px 0px 0px 140px;
+	margin: 9px 80px 9px 80px;
 }
 
 a:hover {
-	color: black;
+	color: #0D3446;
 }
 .hidden {
 	display: none;
 
 }
-.empty-sign-in-space {
+.empty-login-space {
+	height: 180px;
+	width: 100%;
+}
+.empty-register-space {
 	height: 180px;
 	width: 100%;
 }
 .profile-view {
 	background: #176D81;
+	height: 782px;
 }
-.sign-in-view {
+.login-view {
 	height: 782px;
 	width: 100%;
 	background: #0D3446;
 }
-.sign-in-container {
+
+.register-view {
+	height: 782px;
+	width: 100%;
+	background: #0D3446;
+
+}
+.login-container {
 
 	text-align: center;
 	display: block;
 	height: 50%;
+	width: 360px;
 	z-index: 900;
 	margin: auto;
 	border-radius: 2px;
+	/*border: 1.5px solid #71ADB5;*/
+	box-sizing: border-box;
+}
+
+.register-container {
+	text-align: center;
+	display: block;
+	height: 50%;
+	width: 360px;
+	z-index: 900;
+	margin: auto;
+	border-radius: 2px;
+	/*border: 1.5px solid #71ADB5;*/
+	box-sizing: border-box;
 
 }
 
-.sign-in-overlay {
+.login-overlay {
 	position: relative;
 	width: 360px;
 	height: 50%;
@@ -137,14 +206,26 @@ a:hover {
 
 }
 
-.sign-in-overlay::before {
+ .register-overlay {
+ 	position: relative;
+	width: 360px;
+	height: 50%;
+	margin: auto;
+	border-radius: 2px;
+	padding: 10px;
+	box-sizing: border-box;
+	display: block;
+	background-color: rgba(0, 0, 0, 0.75);
+ }
+
+.login-overlay::before {
 	content: "";
 	position: absolute;
 	left: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background-image: url("background.jpg");
+	background-image: url("field.jpg");
 	background-repeat: no-repeat;
 	/*background-size: 100vw 100vh;*/
 	width: 360px;
@@ -152,15 +233,112 @@ a:hover {
 	background-position: center center;
 	background-attachment: fixed;
 	background-color: rgba(0, 0, 0, 0.75);
-	filter: blur(5px);
+	margin: -5px -10px -10px -5px;	
+	filter: blur(10px);
 	display: block;
+	box-sizing: border-box;
 	z-index: -1;
 	border-radius: 2px;
 
 }
+
+.tempClass, .conditionsClass {
+
+	color: white;
+	font-size: 20px;
+	font-style: italic;
+
+}
+
+.conditionsClass {
+
+}
+
+.register-overlay::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url("field.jpg");
+	background-repeat: no-repeat;
+	/*background-size: 100vw 100vh;*/
+	width: 360px;
+	height: 100%;
+	background-position: center center;
+	background-attachment: fixed;
+	background-color: rgba(0, 0, 0, 0.75);
+	filter: blur(10px);
+	display: block;
+	box-sizing: border-box;
+	z-index: -1;
+	border-radius: 2px;
+
+}
+
+.type {
+   
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  animation: type 1.5s steps(200, end); 
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+  to {width: 100%;}
+} 
+
+.type2 {
+
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  animation: type 1s steps(200, end); 
+
+}
+
+@keyframes type2{ 
+  from { width: 0; } 
+  to {width: 100%;}
+} 
+
+
+.cloud-image {
+
+	width: 130px;
+	height: 110px;
+	margin: 33px auto 0 auto;
+	display: block;
+	opacity: 0.5;
+}
+
+.rotateIn {
+  animation-name: rotateIn;
+}
+
+@keyframes rotateIn {
+  from {
+    transform-origin: left bottom;
+    transform: rotate3d(0, 0, 1, -45deg);
+    opacity: 0;
+  }
+
+  to {
+    transform-origin: left bottom;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.testimonial1-inline {
+	display: inline;
+}
+
 .testimonial1 {
 	
-	margin: 40px 0 0 90px;
+	margin: 40px 0 0 140px;
 
 }
 
@@ -168,35 +346,39 @@ a:hover {
 .testimonial2 {
 
 	text-align: right;
-	margin: 0 90px 0 20px;
+	margin: -160px 160px 0 20px;
 
 
 }
 
 .testimonial1, .testimonial2 {
 
-	font-size: 20px;
+	font-size: 24px;
+	padding-bottom: 20px;
 }
-.sign-in-logo {
+.login-logo {
 
-	font-size: 32px;
-	font-family: 'Proza Libre', sans-serif;
+	font-size: 36px;
+	font-family: 'Londrina Outline', cursive;
 	margin: auto;
+	color: white;
 	text-align: center;
 	padding-top: 36px;
 	padding-bottom: 24px;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	z-index: 900;
+	font-weight: normal;
 }
 
 .heading {
-
+	font-family: 'Londrina Outline', cursive;
 	font-size: 140px;
 	text-align: center;
-	margin: auto;
-	padding-top: 100px;
-	padding-bottom: 20px;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+	color: #71ADB5;
+	margin: 0 auto;
+	padding-top: 80px;
+	padding-bottom: 5px;
+	text-shadow: 1.25px 1.25px 1.25px rgba(0, 0, 0, 0.75);
 	z-index: 900;
 }
 
@@ -204,11 +386,17 @@ a:hover {
 
 	font-size: 14px;
 	margin: auto;
-	font-family: 'Proza Libre', sans-serif;
+	font-family: 'Gruppo', cursive;
 	text-decoration: none;
-	color: #71ADB5;
+	color: #0D3446;
 	padding-bottom: 10px;
 	z-index: 900;
+}
+
+.register:hover {
+
+	cursor: pointer;
+	cursor: hand;
 }
 
 .password-form, .username-form {
@@ -225,7 +413,7 @@ a:hover {
 
 	color: #176D81;
 	font-size: 24px;
-	font-family: 'Proza Libre', sans-serif;
+	font-family: 'Gruppo', cursive;
 	text-align: left;
 	padding-left: 4px;
 	border-radius: 2px
@@ -239,12 +427,11 @@ a:hover {
 	z-index: 900;
 }
 
-.sign-in-button {
+.login-button {
 	color: white;
 	font-size: 16px;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
-	font-family: 'Proza Libre', sans-serif;
-	border-radius: 2px;
+	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
+	font-family: 'Gruppo', cursive;	border-radius: 2px;
 	background: #176D81;
 	opacity: 0.75;
 	box-sizing: border-box;
@@ -258,12 +445,12 @@ a:hover {
 	z-index: 900;
 }
 
-.sign-in-button:hover {
+.login-button:hover {
 	opacity: 1.0;
 
 }
 /*
-.sign-in-button:focus {
+.login-button:focus {
 	outline:0;
 
 }
@@ -295,7 +482,7 @@ a:hover {
 
 }
 
-.sign-in-form {
+.login-form, .register-form {
 	
 	display: block;
 	text-align: center;
@@ -303,9 +490,20 @@ a:hover {
 	
 }
 
+.horizontal-line-subtitle {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	width: 15%;
+	border: 1px solid white;
+	display: block;
+    height: 1px;
+    text-align: center;
+    opacity: 0.5;
+   
+}
 .floating-label-input {
 	font-size:18px;
-	font-family: 'Proza Libre', sans-serif;
+	font-family: 'Gruppo', cursive;	
 	padding:10px 10px 10px 5px;
 	display:block;
 	width:100%;
@@ -323,10 +521,10 @@ a:hover {
 
 .floating-label {
 	color:white; 
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
-	font-size:16px;
+	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
+	font-size:14px;
 	font-weight:normal;
-	font-family: 'Proza Libre', sans-serif;
+	font-family: 'Gruppo', cursive;
 	position:absolute;
 	pointer-events:none;
 	left:5px;
@@ -424,15 +622,17 @@ h1 {
 .profile-view {
 	text-align: center;
 	margin: auto;
+	display: block;
+	
 
 }
 
 .profile-heading-div {
-	font-size: 36px;
-	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
+	font-size: 42px;
+	color: white;
 	font-weight: normal;
-	margin:auto;
-	padding-top: 10px;
+	margin-top: 0px;
+	font-family: 'Londrina Outline', cursive;
 
 }
 
@@ -443,13 +643,11 @@ h1 {
 }
 
 .today {
-	font-size: 18px;
-	font-style: italic;
+	font-size: 16px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
-	font-family: 'Proza Libre', sans-serif;
+	font-family: 'Gruppo', cursive;
 	display: inline-block;
-	margin: 8px 0 8px 0;
-	
+	margin: 0 0 15px 0;
 	z-index: 900;
 }
 
@@ -506,11 +704,11 @@ h1 {
 	flex-basis: 33.33%;
 	float: left;
 	width: 140px;
-	height: 100%;
-	font-family: 'Proza Libre', sans-serif;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
-	margin-left: 10px;
-	margin-top: 100px;
+	height: 400px;
+	font-family: 'Gruppo', cursive;
+	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
+	margin-left: 20px;
+	margin-top: 125px;
 	border-radius: 2px;
 	z-index: 900;
 	background-color: #71ADB5;
@@ -521,20 +719,32 @@ h1 {
 	float: right 20%;
 	position: relative;
 	display: inline-block;
+	margin-right: 160px;
 }
 
 .forecast-data {
-	font-family: 'Proza Libre', sans-serif;
-	font-size: 16px;
+	font-family: 'Gruppo', cursive;
+	font-size: 24px;
+	height: 400px;
+	width: 360px;
 	padding-bottom: 40px;
 	z-index: 900;
 	border-radius: 2px;
+
+	/*border: 1.5px solid #71ADB5;*/
+
+	
+}
+
+.temp-conditions {
+	font-family: 'Gruppo', cursive;
+	font-size: 24px;
 }
 
 .forecast-data-overlay {
 	position: relative;
 	width: 360px;
-	height: 100%;
+	height: 400px;
 	margin: auto;
 	border-radius: 2px;
 	padding: 10px;
@@ -551,26 +761,46 @@ h1 {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background-image: url("background.jpg");
+	background-image: url("field.jpg");
 	background-repeat: no-repeat;
 	/*background-size: 100vw 100vh;*/
 	width: 360px;
-	height: 100%;
+	height: 400px;
 	background-position: center center;
 	background-attachment: fixed;
 	background-color: rgba(0, 0, 0, 0);
-	filter: blur(2px);
+	filter: blur(10px);
 	display: block;
 	z-index: -1;
 	border-radius: 2px;
 
 }
 
+.waitForIt {
+
+	display: none;
+}
+
+.outfit-rec {
+	font-family: 'Gruppo', cursive;
+	color: white;
+	padding-bottom: 30px;
+	font-size: 36px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+
+}
+.forecast-container {
+
+	margin: auto;
+	display: inline-block;
+	height: 500px;
+	box-sizing: border-box;
+}
 .tomorrow-button {
 	color: white;
 	font-size: 16px;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
-	font-family: 'Proza Libre', sans-serif;
+	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
+	font-family: 'Gruppo', cursive;
 	border-radius: 2px;
 	background: #176D81;
 	opacity: 0.75;
@@ -593,9 +823,8 @@ h1 {
 
 .settings-headers {
 	text-decoration: none;
-	text-decoration-color: white;
+	color: white;
 	font-weight: normal;
-	opacity: 0.9;
 	text-align: center;
 	font-size: 16px;
 
@@ -636,19 +865,20 @@ h1 {
 */
 .settings-title {
 
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: normal;
 	margin-top: 0px;
 	text-align: center;
 	z-index: 900;
-	padding-top: 10px;
+	padding-top: 20px;
 }
 
 .location-input {
-	font-size:18px;
-	font-family: 'Proza Libre', sans-serif;
+	font-size:16px;
+	font-family: 'Gruppo', cursive;
 	padding:10px 10px 10px 5px;
 	display:block;
+
 	width: 88px;
 	height: 20px;
 	border:none;
@@ -661,7 +891,7 @@ h1 {
 }
 
 .my-weatherwear-heading {
-
+	font-family: 'Londrina Outline', cursive;
 	margin-bottom: 0px;
 	margin-top: 10px;
 	z-index: 900;
@@ -671,7 +901,6 @@ h1 {
 	font-weight: normal;
 	font-size: 12px;
 	margin: 0px;
-	opacity: 0.8;
 	color: white;
 
 }
@@ -679,6 +908,8 @@ h1 {
 ::-webkit-input-placeholder {
 	color: white;
 	opacity: 0.33;
+	text-align: center;
+	display: inline-block;
 
 }
 
@@ -689,7 +920,7 @@ button {
 
 @media screen and (max-width: 1140px) {
   .navbar a:not(:first-child) {display: none;}
-  .navbar a.icon {
+  .navbar a {
     float: right;
     display: block;
 
@@ -699,10 +930,11 @@ button {
   }
 }
 
-/* The "responsive" class is added to the navbar with JavaScript when the user clicks on the icon. This class makes the navbar look good on small screens (display the links vertically instead of horizontally) */
+
+
 @media screen and (max-width: 1140px) {
   .navbar.responsive {position: relative;}
-  .navbar.responsive a.icon {
+  .navbar.responsive a {
     position: absolute;
     right: 0;
     top: 0;
@@ -716,7 +948,7 @@ button {
 
 .figure {
 
-	height: 320px;
+	height: 300px;
 	width: 220px;
 	margin: 30px;
 	box-sizing: border-box;
@@ -770,9 +1002,9 @@ button {
 .location-button {
 	color: white;
 	font-size: 14px;
-	font-family: 'Proza Libre', sans-serif;
+	font-family: 'Gruppo', cursive;
 	border-radius: 2px;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
 	opacity: 0.75;
 	height: 24px;
