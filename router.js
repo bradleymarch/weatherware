@@ -1,6 +1,6 @@
 const {BasicStrategy} = require('passport-http');
 const express = require('express');
-
+const bodyParser = require('body-parser');
 const passport = require('passport');
 const uuid = require('uuid');
 
@@ -9,16 +9,18 @@ const router = express.Router();
 
 //router.use(require('serve-static')(__dirname + '/../../public'));
 router.use(require('cookie-parser')());
-router.use(require('body-parser').urlencoded({ extended: true }));
-//router.use(require('express-session')({
-  //secret: 'secret',
- // resave: true,
-  //saveUninitialized: true
-//}));
+router.use(bodyParser.urlencoded());
+router.use(bodyParser.json());
+router.use(require('express-session')({
+  secret: 'secret',
+ resave: true,
+  saveUninitialized: true
+}));
 router.use(passport.initialize());
-//router.use(passport.session());
+router.use(passport.session());
 
 const basicStrategy = new BasicStrategy((username, password, callback) => {
+	console.log(username);
 	let user;
 	User
 		.findOne({username: username})
@@ -88,6 +90,10 @@ router.post('/register', (req, res) => {
 		return res.status(400).json({message: 'No request body'});
 	}
 
+	if (!('username' in req.body)) {
+		return res.status(422).json({message: 'Missing field: username'});
+	}
+
 	let {username, password} = req.body;
 
 	if (typeof username !== 'string') {
@@ -142,8 +148,9 @@ router.post('/register', (req, res) => {
 });
 
 router.get('/login',
-	passport.authenticate('Basic', {session: true, failureRedirect: '/login.html'}),
+	passport.authenticate('basic', {session: true, failureRedirect: '/login.html'}),
 		(req, res) => {
+			console.log('hello');
 			res.json({message: 'Sign in successful'});
 		}
 );

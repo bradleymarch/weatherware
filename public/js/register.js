@@ -9,8 +9,7 @@ function registerUser(username, password) {
     contentType: 'application/json',
     dataType: 'json',
     //authorization: "Basic " + btoa(username + ':' + password),
-
-   error: function(res) {
+    error: function(res) {
       var message = res.responseJSON.message;
       $('.js-error-message').html(message);
     },

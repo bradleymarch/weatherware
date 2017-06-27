@@ -5,10 +5,10 @@ function loginUser(username, password) {
   var settings = {
     url: "/users/login",
     method: "GET",
-    headers: {
-      'content-type': "application/json",
-      authorization: "Basic " + btoa(username + ':' + password)
-    },
+    //headers: {
+      //'content-type': "application/json",
+      authorization: "Basic " + btoa(username + ':' + password),
+    //},
     dataType: 'json', 
     
   };
