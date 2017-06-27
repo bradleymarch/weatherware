@@ -5,17 +5,18 @@ function loginUser(username, password) {
   var settings = {
     url: "/users/login",
     method: "GET",
-    //headers: {
-      //'content-type': "application/json",
-      authorization: "Basic " + btoa(username + ':' + password),
-    //},
-    dataType: 'json', 
-    
+    headers: {
+      'content-type': "application/json",
+      authorization: "basic" + btoa(username + ':' + password)
+    }, 
   };
 
   $.ajax(settings).done(function (response) {
+    console.log(response);
       if (response.user) {
         location.href = '/profile.html';
+        //now loggedIn, so MyWeatherWear anchor href now becomes href="profile.html";
+        $("#login_to_profile").attr("href", "/profile.html");
       }
       else {
         $('.js-login-form')[0].reset();
@@ -23,7 +24,6 @@ function loginUser(username, password) {
       }
   });
 }
-
 
 function watchLogIn() {
   $('.js-login-form').submit(function(event) {

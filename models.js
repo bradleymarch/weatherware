@@ -17,7 +17,6 @@ const userSchema = mongoose.Schema({
 	},
 });
 
-
  userSchema.methods.apiRepr = function() {
     return {
         username: this.username || '',
@@ -30,21 +29,6 @@ const userSchema = mongoose.Schema({
 		},
     };
 } 
-/*
-userSchema.methods.apiRepr = function() {
-	return {
-
-
-		settings: {
-
-		location: String,
-		tempSensitivity: {type: String, default: "neutral"},
-		
-	},
-};
-
-}
-*/
 
 userSchema.methods.validatePassword = function(password) {
 	return bcrypt.compare(password, this.password);
