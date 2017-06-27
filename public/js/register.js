@@ -1,41 +1,43 @@
-
 'use strict';
 
-
 function registerUser(username, password) {
-
+  console.log(username, password);
   var settings = {
-    url: '../users/register',
+    url: '/users/register',
     method: 'POST',
     data: JSON.stringify({username: username, password: password}),
     contentType: 'application/json',
-    //dataType: 'json',
-    error: function(res) {
+    dataType: 'json',
+    //authorization: "Basic " + btoa(username + ':' + password),
+
+   error: function(res) {
       var message = res.responseJSON.message;
       $('.js-error-message').html(message);
     },
   };
 $.ajax(settings)
     .done(function (response) {
-      $('.js-success-message').html('Logging in...');
-      setTimeout(function(){loginUser(username, password)}, 1000);
+      console.log(response);
+      $('.js-success-message').html('User created!<br>Redirecting to Login...');
+      setTimeout(function(){return location.href = '/login.html'}, 1000);
     })
 }
   
-
+/*
 function loginUser(username, password) {
 
   var settings = {
-    url: "../users/login",
-    method: "GET",
+    url: "/users/login",
+    method: 'GET',
     data: JSON.stringify({username: username, password: password}),
-    headers: {
-      'content-type': "application/json",
-      authorization: "Basic " + btoa(username + ':' + password)
-    }
+    contentType: 'application/json',
+    dataType: 'json', 
+    authorization: "Basic " + btoa(username + ':' + password),
+    
   };
 
   $.ajax(settings).done(function (response) {
+    console.log(response);
       if (response.user) {
         location.href = '/profile.html';
       }
@@ -44,7 +46,7 @@ function loginUser(username, password) {
       }
   });
 }
-
+*/
 function watchRegister() {
   $(".js-register-form").submit(function(event) {
     event.preventDefault();

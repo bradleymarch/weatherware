@@ -1,17 +1,16 @@
-
 'use strict';
-
 
 function loginUser(username, password) {
 
   var settings = {
-    url: "../users/login",
+    url: "/users/login",
     method: "GET",
-    data: JSON.stringify({username: username, password: password}),
     headers: {
       'content-type': "application/json",
       authorization: "Basic " + btoa(username + ':' + password)
-    }
+    },
+    dataType: 'json', 
+    
   };
 
   $.ajax(settings).done(function (response) {

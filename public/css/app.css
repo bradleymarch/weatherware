@@ -338,7 +338,7 @@ a:hover {
 
 .testimonial1 {
 	
-	margin: 40px 0 0 140px;
+	margin: 20px 0 0 140px;
 
 }
 
@@ -346,7 +346,7 @@ a:hover {
 .testimonial2 {
 
 	text-align: right;
-	margin: -160px 160px 0 20px;
+	margin: -110px 140px 0 20px;
 
 
 }
@@ -374,7 +374,7 @@ a:hover {
 	font-family: 'Londrina Outline', cursive;
 	font-size: 140px;
 	text-align: center;
-	color: #71ADB5;
+	color: #176D81;
 	margin: 0 auto;
 	padding-top: 80px;
 	padding-bottom: 5px;
@@ -616,6 +616,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 h1 {
 	font-weight: normal;
+	margin-bottom: 0px;
 
 }
 
@@ -629,6 +630,8 @@ h1 {
 
 .profile-heading-div {
 	font-size: 42px;
+	box-sizing: border-box;
+	display: block;
 	color: white;
 	font-weight: normal;
 	margin-top: 0px;
@@ -725,7 +728,7 @@ h1 {
 .forecast-data {
 	font-family: 'Gruppo', cursive;
 	font-size: 24px;
-	height: 400px;
+	height: 370px;
 	width: 360px;
 	padding-bottom: 40px;
 	z-index: 900;
@@ -744,7 +747,7 @@ h1 {
 .forecast-data-overlay {
 	position: relative;
 	width: 360px;
-	height: 400px;
+	height: 370px;
 	margin: auto;
 	border-radius: 2px;
 	padding: 10px;
@@ -765,7 +768,7 @@ h1 {
 	background-repeat: no-repeat;
 	/*background-size: 100vw 100vh;*/
 	width: 360px;
-	height: 400px;
+	height: 370px;
 	background-position: center center;
 	background-attachment: fixed;
 	background-color: rgba(0, 0, 0, 0);
@@ -933,6 +936,7 @@ button {
 
 
 @media screen and (max-width: 1140px) {
+  .testimonial1, .testimonial2 { display: none; }
   .navbar.responsive {position: relative;}
   .navbar.responsive a {
     position: absolute;

@@ -1,14 +1,22 @@
 const {BasicStrategy} = require('passport-http');
 const express = require('express');
-const jsonParser = require('body-parser').json();
+
 const passport = require('passport');
 const uuid = require('uuid');
 
 const {User} = require('./models');
-
 const router = express.Router();
 
-router.use(jsonParser);
+//router.use(require('serve-static')(__dirname + '/../../public'));
+router.use(require('cookie-parser')());
+router.use(require('body-parser').urlencoded({ extended: true }));
+//router.use(require('express-session')({
+  //secret: 'secret',
+ // resave: true,
+  //saveUninitialized: true
+//}));
+router.use(passport.initialize());
+//router.use(passport.session());
 
 const basicStrategy = new BasicStrategy((username, password, callback) => {
 	let user;
@@ -33,15 +41,9 @@ const basicStrategy = new BasicStrategy((username, password, callback) => {
 		.catch(err => console.log('Invalid username or password'))
 });
 
-/*router.use(require('express-session')({ 
-  secret: 'something something',
-  resave: false,
-  saveUninitialized: false 
-}));
-*/
+
+
 passport.use(basicStrategy);
-router.use(passport.initialize());
-//router.use(passport.session());
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -80,12 +82,10 @@ passport.deserializeUser(function(id, done) {
 // POST for creating new user account
 
 router.post('/register', (req, res) => {
+	console.log(req.body);
 
 	if (!req.body) {
 		return res.status(400).json({message: 'No request body'});
-	}
-	if (!('username' in req.body)) {
-		return res.status(422).json({message: 'Missing field: username'});
 	}
 
 	let {username, password} = req.body;
@@ -136,12 +136,13 @@ router.post('/register', (req, res) => {
 			return res.status(201).json({user: user.apiRepr(), message: 'New account created!'});
 		})
 		.catch(err => {
+			
 			res.status(500).json({message: 'Internal server error'});
 		});
 });
 
 router.get('/login',
-	passport.authenticate('Basic', {session: false, failureRedirect: '/login.html'}),
+	passport.authenticate('Basic', {session: true, failureRedirect: '/login.html'}),
 		(req, res) => {
 			res.json({message: 'Sign in successful'});
 		}

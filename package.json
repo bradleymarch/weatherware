@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.2",
+    //"express-session": "^1.15.3",
     "lodash": "^4.17.4",
     "mongoose": "^4.10.3",
     "nodemon": "^1.11.0",
