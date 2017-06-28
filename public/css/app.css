@@ -204,8 +204,14 @@ body {
 a:hover {
 	color: #0D3446;
 }
+
+.navspan {
+		margin: 9px 180px 9px 180px !important;
+
+
+}
 .hidden {
-	display: none;
+	display: none !important;
 
 }
 .empty-login-space {

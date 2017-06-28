@@ -29,7 +29,7 @@ describe('first-test', function() {
       });
    });
 });
-  describe('GET endpoint', function() {
+ /*describe('GET endpoint', function() {
 
     it('should GET forecast for set location', function() {
   
@@ -111,7 +111,7 @@ describe('first-test', function() {
         });
       });
   });
-
+*/
 
 
 

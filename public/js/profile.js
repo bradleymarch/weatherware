@@ -1,9 +1,13 @@
 $(function() {
-
+  
+  $(".js-hidden").removeClass('hidden');
+  $(".js-login-link").addClass("hidden");
 	const FORECAST = {
 
     roundedTemp: []
   };
+//GET User
+//settings: (can be put inside variable)
 
   $(".js-location-form").on("submit", function(event) {
 
@@ -39,7 +43,10 @@ $(function() {
       else if (parseInt(roundedTemp)<= 50) 
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
 
+     this.User.update({settings: {location: null}}, {$set: {settings: {location: zipCode} }}, {upsert: true}, function(err){console.log('whoops');})
     });
+
+    
   });
 
   $("#temp_box1").on("click", function() {
@@ -67,6 +74,7 @@ $(function() {
       else if (parseInt(roundedTemp)<= 60 && ($("#temp_box1").is(":checked"))) 
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
       //also save this setting to specific user
+
     });
   });
   $("#temp_box2").on("click", function() {
