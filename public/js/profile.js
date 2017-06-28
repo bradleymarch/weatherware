@@ -12,6 +12,7 @@ $(function() {
     $(".waitForIt").removeClass("waitForIt");
 
     const zipCode = $("#location-input-id").val();
+    //save this setting for user each time it is SET
     const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
     const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
@@ -55,14 +56,17 @@ $(function() {
       const casedConditions = theConditions.toUpperCase();
       if (parseInt(roundedTemp)>= 75 && ($("#temp_box1").is(":checked"))) {
         return $(".js-outfit-rec").html("<p>Shorts<br>T-Shirt</p>");
+        //also save this setting to specific user
       }
 
       else if (parseInt(roundedTemp)>= 61 && roundedTemp<= 74 && ($("#temp_box1").is(":checked"))) {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
+        //also save this setting to specific user
       }
 
       else if (parseInt(roundedTemp)<= 60 && ($("#temp_box1").is(":checked"))) 
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
+      //also save this setting to specific user
     });
   });
   $("#temp_box2").on("click", function() {
@@ -79,17 +83,20 @@ $(function() {
       const casedConditions = theConditions.toUpperCase();
       if (parseInt(roundedTemp)>= 60 && ($("#temp_box2").is(":checked"))) {
         return $(".js-outfit-rec").html("<p>Shorts<br>T-Shirt</p>");
+        //also save this setting to specific user
       }
 
       else if (parseInt(roundedTemp)>= 41 && roundedTemp<= 59 && ($("#temp_box2").is(":checked"))) {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
+        //also save this setting to specific user
       }
 
       else if (parseInt(roundedTemp)<= 40 && ($("#temp_box2").is(":checked"))) 
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
+      //also save this setting to specific user
     });
   });
-
+//const neutral = 
   $("#temp_box3").on("click", function() {
     const zipCode = $("#location-input-id").val();
     const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
@@ -102,6 +109,7 @@ $(function() {
       //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
       const roundedTemp = theTemp.toFixed();
       const casedConditions = theConditions.toUpperCase();
+
       if (parseInt(roundedTemp)>= 70 && ($("#temp_box3").is(":checked"))) {
         return $(".js-outfit-rec").html("<p>Shorts<br>T-Shirt</p>");
       }

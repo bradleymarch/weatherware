@@ -7,9 +7,10 @@ function loginUser(username, password) {
     method: "GET",
     headers: {
       'content-type': "application/json",
-      authorization: "basic" + btoa(username + ':' + password)
+      authorization: "basic" + btoa(username + ':' + password),
     }, 
   };
+//need to add localStorage - persist?
 
   $.ajax(settings).done(function (response) {
     console.log(response);

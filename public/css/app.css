@@ -22,6 +22,71 @@ body {
 
 }
 
+.logout-button {
+	color: white;
+	font-size: 14px;
+	font-family: 'Gruppo', cursive;
+	border-radius: 2px;
+	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
+	background: #176D81;
+	opacity: 0.75;
+	height: 24px;
+	width: 56px;
+	margin: auto;
+	text-decoration: none;
+	border: none;
+
+	display: block;
+	outline: none;
+	z-index: 900;
+}
+
+.logout-button:hover {
+	opacity: 1.0;
+
+}
+
+.logout-button-text {
+	color: white;
+	text-decoration: none;
+}
+
+.logout-button-text:hover {
+	color: white;
+}
+
+.save-controls-button {
+	color: white;
+	font-size: 14px;
+	font-family: 'Gruppo', cursive;
+	border-radius: 2px;
+	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
+	background: #176D81;
+	opacity: 0.75;
+	height: 24px;
+	width: 56px;
+	margin: auto;
+	text-decoration: none;
+	border: none;
+
+	display: block;
+	outline: none;
+	z-index: 900;
+}
+
+.save-controls-button:hover {
+	opacity: 1.0;
+
+}
+
+.save-controls-button-text {
+	color: white;
+	text-decoration: none;
+}
+
+.save-controls-button-text:hover {
+	color: white;
+}
 
 #forecast {
 
@@ -707,7 +772,7 @@ h1 {
 	flex-basis: 33.33%;
 	float: left;
 	width: 140px;
-	height: 400px;
+	height: 450px;
 	font-family: 'Gruppo', cursive;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	margin-left: 20px;

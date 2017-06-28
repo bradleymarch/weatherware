@@ -7,7 +7,7 @@ const {User} = require('./models');
 const router = express.Router();
 //router.use(require('serve-static')(__dirname + '/../../public'));
 router.use(require('cookie-parser')());
-router.use(bodyParser.urlencoded());
+router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 router.use(require('express-session')({
   secret: 'secret',
@@ -18,7 +18,7 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 const basicStrategy = new BasicStrategy((username, password, callback) => {
-	console.log(username);
+	console.log(username, password);
 	let user;
 	User
 		.findOne({username: username})
@@ -52,25 +52,7 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-/*function loggedIn(req, res, next) {
-	if (req.user) {
-		next();
-	} else {
-		res.json({redirect: '/login.html', message: 'Please sign in'});
-	}
-}
-// GET for user session (protected, must be signed-in already and have session cookie)
-//router.get('/me', loggedIn, (req, res, next) => {
- // 	res.json({user: req.user.apiRepr()});
-//	}
-//);
-// GET for user to sign out
-/*router.get('/logout', (req, res) => {
-	req.session.destroy(function (err) {
-  		res.redirect('/');
-  	});
-});
-*/
+
 // POST for creating new user account
 router.post('/register', (req, res) => {
 	console.log(req.body);
@@ -135,27 +117,43 @@ router.post('/register', (req, res) => {
 			res.status(500).json({message: 'Internal server error'});
 		});
 });
-/*function loggedIn(req, res, next) {
+
+router.get('/login',
+	passport.authenticate('basic', {session: false}),
+		(req, res) => {
+			console.log(req.user);
+			console.log('hello');
+			res.json(req.user, {message: 'Sign in successful'});
+		}
+);
+//do I need to setup an ajax req for this endpoint, or does the <a> href that takes me here cover all bases?
+router.get('/logout', (req, res) => {
+	req.session.destroy(function (err) {
+  		res.redirect('/index.html');
+  	});
+});
+function loggedIn(req, res, next) {
 	if (req.user) {
 		next();
 	} else {
 		res.json({redirect: '/login.html', message: 'Please sign in'});
 	}
 }
-*/
-router.get('/login',
-	passport.authenticate('basic', {session: true, successRedirect: '/profile.html', failureRedirect: '/login.html'}),
-		(req, res) => {
-			console.log(req.query);
-			res.json({message: 'Sign in successful'});
-		}
-);
 // GET for user session (protected, must be signed-in already and have session cookie)
-/*router.get('/me', loggedIn, (req, res, next) => {
+router.get('/me', loggedIn, (req, res, next) => {
   	res.json({user: req.user.apiRepr()});
 	}
 );
-*/
+
+router.put('/saveControls', bodyParser, (req, res) => {
+	User.update({
+    settings: {
+    	tempSensitivity: req.params.tempSensitivity,
+    }
+  });
+  res.status(204).end();
+});
+
 router.use('*', function(req, res) {
 	res.status(404).json({message: 'Not Found'});
 });
