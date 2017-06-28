@@ -14,20 +14,22 @@ const should = chai.should();
 chai.use(chaiHttp);
 
 describe('first-test', function() {
+  before(function() {
+    return runServer(TEST_DATABASE_URL);
+  });
 
- 
-  it('should respond with html', function() {
-    // for Mocha tests, when we're dealing with asynchronous operations,
-    // we must either return a Promise object or else call a `done` callback
-    // at the end of the test. The `chai.request(server).get...` call is asynchronous
-    // and returns a Promise, so we just return it.
+  after(function() {
+    return closeServer(TEST_DATABASE_URL);
+  });
+
+  it('should display html on GET', function() {
     return chai.request(app)
       .get('/')
       .then(function(res) {
         res.should.have.status(200);
         res.should.be.html;
       });
-   });
+  });
 });
  /*describe('GET endpoint', function() {
 
