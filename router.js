@@ -126,11 +126,14 @@ router.post('/login',
 
 router.post('/location', (req, res, err) => {
         console.log(req.body);
-      User
-      .update({req.user:_id}, {location: null}}, {$set: {settings: {location: req.body.zipCode} }}, {upsert: true}, 
-        function(err){console.log('Error.  Settings did not update.');})
+      
+      User.findByIdAndUpdate(req.user._id, { $set: { settings:{location: req.body.zipCode} }}, { new: true }, (err, user) => {
+  if (err) res.send(err);
+  
+  res.json(user);
+}); 
         
-    })
+    });
 //do I need to setup an ajax req for this endpoint, or does the <a> href that takes me here cover all bases?
 router.get('/logout', (req, res) => {
     req.session.destroy(function (err) {
