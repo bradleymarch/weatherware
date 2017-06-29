@@ -123,6 +123,14 @@ router.post('/login',
             res.json({user: req.user.apiRepr(), message: 'Sign in successful'});
         }
 );
+
+router.post('/location', (req, res, err) => {
+        console.log(req.body);
+      User
+      .update({req.user:_id}, {location: null}}, {$set: {settings: {location: req.body.zipCode} }}, {upsert: true}, 
+        function(err){console.log('Error.  Settings did not update.');})
+        
+    })
 //do I need to setup an ajax req for this endpoint, or does the <a> href that takes me here cover all bases?
 router.get('/logout', (req, res) => {
     req.session.destroy(function (err) {
@@ -143,7 +151,7 @@ router.get('/me', loggedIn, (req, res, next) => {
 );
 
 
-router.put('/saveControls', (req, res) => {
+/*router.put('/saveControls', (req, res) => {
     User.update({
     settings: {
         tempSensitivity: req.params.tempSensitivity,
@@ -151,7 +159,7 @@ router.put('/saveControls', (req, res) => {
   });
   res.status(204).end();
 });
-
+*/
 router.use('*', function(req, res) {
     res.status(404).json({message: 'Not Found'});
 });

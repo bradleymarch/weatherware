@@ -6,7 +6,28 @@ $(function() {
 
     roundedTemp: []
   };
-//GET User
+
+//GET User on load
+/*const getUser = {
+    url: "/users/location",
+    method: "GET",
+    data: {user._id},
+    contentType: 'application/json',
+    dataType: 'json',
+  };
+
+  $.ajax(getUser).done(function (response) {
+    console.log('Ya:', response);
+      if (response.user) {
+        $('.js-success-message2').html("Welcome, 'username'!");
+
+      }
+      else {//res.redirect? to Register
+        $('.js-error-message').html('Could not load user');
+        
+      };
+
+  });*/
 //settings: (can be put inside variable)
 
   $(".js-location-form").on("submit", function(event) {
@@ -16,6 +37,7 @@ $(function() {
     $(".waitForIt").removeClass("waitForIt");
 
     const zipCode = $("#location-input-id").val();
+    console.log(zipCode);
     //save this setting for user each time it is SET
     const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
     const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
@@ -43,12 +65,30 @@ $(function() {
       else if (parseInt(roundedTemp)<= 50) 
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
 
-     this.User.update({settings: {location: null}}, {$set: {settings: {location: zipCode} }}, {upsert: true}, function(err){console.log('whoops');})
-    });
-
-    
   });
+console.log(zipCode);
+  const locationPost = {
+    url: "/users/location",
+    method: "POST",
+    data: JSON.stringify({zipCode:zipCode}),
+    contentType: 'application/json',
+    dataType: 'json',
+  };
 
+  $.ajax(locationPost).done(function (response) {
+    console.log('Ya:', response);
+      if (req.body) {
+        location.href = 'profile.html';
+
+      }
+      else {
+        $('.js-location-form')[0].reset();
+        
+      }
+
+  });
+});
+     //this.User.update({settings: {location: null}}, {$set: {settings: {location: zipCode} }}, {upsert: true}, function(err){console.log('whoops');})
   $("#temp_box1").on("click", function() {
     const zipCode = $("#location-input-id").val();
     const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
