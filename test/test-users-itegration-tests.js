@@ -114,7 +114,7 @@ describe('Users API resource', function() {
 			let testPassword = 'password123';
 			
 			return chai.request(app)
-				.post('/users/sign-up')
+				.post('/users/register')
 				.send({username: testUsername, password: testPassword})
 				.then(res => {							
 					res.should.have.status(201);

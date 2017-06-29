@@ -127,11 +127,12 @@ router.post('/login',
 router.post('/location', (req, res, err) => {
         console.log(req.body);
       
-      User.findByIdAndUpdate(req.user._id, { $set: { settings:{location: req.body.zipCode} }}, { new: true }, (err, user) => {
-  if (err) res.send(err);
-  
-  res.json(user);
-}); 
+      User
+      .findByIdAndUpdate(req.user._id, { $set: { settings:{location: req.body.zipCode} }}, { new: true }, (err, user) => {
+          if (err) res.send(err);
+          
+          res.json(user);
+        }); 
         
     });
 //do I need to setup an ajax req for this endpoint, or does the <a> href that takes me here cover all bases?
