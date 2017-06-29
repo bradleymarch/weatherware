@@ -128,4 +128,5 @@ describe('Users API resource', function() {
 						})
 				});
 		});
-	})
+	});
+});

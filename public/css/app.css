@@ -1011,6 +1011,9 @@ a:hover {
 
    .dropdown-cloud {
   	 display: block;
+  	 position: fixed;
+  	 top: 0;
+  	 right: 0;
 	}
 
   nav img:hover ~ .dropdown-menu {
