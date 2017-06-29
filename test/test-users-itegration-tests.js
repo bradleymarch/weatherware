@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs');
 const should = chai.should();
 
 //const {User} = require('./models');
-const {app, runServer, closeServer} = require('./server');
+//const {app, runServer, closeServer} = require('../server');
 const {TEST_DATABASE_URL} = require('./config');
 
 chai.use(chaiHttp);
