@@ -126,7 +126,7 @@ describe('Users API resource', function() {
 							user.should.exist;
 							user.username.should.equal(testUsername);
 						})
-				});
+				})
 		});
 	});
 	
