@@ -2,6 +2,7 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 
 const {app} = require('../server');
+const {TEST_DATABASE_URL} = require('./config');
 
 // this lets us use *should* style syntax in our tests
 // so we can do things like `(1 + 1).should.equal(2);`
