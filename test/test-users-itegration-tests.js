@@ -92,7 +92,7 @@ describe('Users API resource', function() {
 		it('should sign out the user and redirect', function() {
 			let agent = chai.request.agent(app);
 			return agent
-				.get('/users/login') // first have to log in
+				.get('/users/logout') // first have to log in
 				.auth('testuser', 'password')
 				.then(() => {				
 					return agent.get('/users/logout')
