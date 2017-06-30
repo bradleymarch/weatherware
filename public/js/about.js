@@ -1,6 +1,6 @@
 $(function() {
 
-//no functionality here
+//no functionality here really at all
 
 
 
