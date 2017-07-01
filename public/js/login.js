@@ -14,7 +14,26 @@ function loginUser(username, password) {
   $.ajax(settings).done(function (response) {
     console.log('Ya:', response);
       if (response.user) {
-        location.href = 'profile.html';
+        const getUser = {
+          url: "/users/settings",
+          method: "GET",
+          data: window.location = '/profile.html',
+          contentType: 'application/json',
+          dataType: 'json',
+        };
+
+  $.ajax(getUser).done(function (response) {
+    console.log('Ya:', response);
+      if (response.user) {
+        $('.js-success-message2').html("Welcome, 'username'!");
+
+      }
+      else {//res.redirect? to Register
+        $('.js-error-message').html('Could not load user');
+        
+      };
+
+  });
 
       }
       else {
@@ -33,6 +52,7 @@ function watchLogIn() {
     var password = $("#login_form_password").val();
 
     loginUser(username, password);
+
   });
 }
 

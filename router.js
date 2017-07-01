@@ -135,6 +135,15 @@ router.post('/location', (req, res, err) => {
         }); 
         
     });
+
+router.get('/settings', (req, res, err) => {
+
+    User
+    .findById(req.user._id, (err, user) => {
+      if (err) res.send(err);
+      res.json(user);
+    });
+});
 //do I need to setup an ajax req for this endpoint, or does the <a> href that takes me here cover all bases?
 router.get('/logout', (req, res) => {
     req.session.destroy(function (err) {

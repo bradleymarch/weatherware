@@ -6,28 +6,37 @@ $(function() {
 
     roundedTemp: []
   };
+    /*const zipCode = user._id.settings.location;
+    //save this setting for user each time it is SET
+    const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
+    const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
-//GET User on load
-/*const getUser = {
-    url: "/users/location",
-    method: "GET",
-    data: {user._id},
-    contentType: 'application/json',
-    dataType: 'json',
-  };
+    $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
+      const theTemp = response.list[0].temp.max;
 
-  $.ajax(getUser).done(function (response) {
-    console.log('Ya:', response);
-      if (response.user) {
-        $('.js-success-message2').html("Welcome, 'username'!");
+      const theConditions = response.list[0].weather[0].description;
+      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
+      const roundedTemp = theTemp.toFixed();
+      const casedConditions = theConditions.toUpperCase();
+      return
+      $(".js-temp-conditions").html('<p class="tempClass">Temperature' +': ' + roundedTemp + ' °F</p><p class="conditionsClass">Conditions' +': ' + casedConditions + '</p>');
+      //$(".js-forecast-data").append('<p class="conditionsClass">Conditions' +': ' + casedConditions + '</p>');
 
+
+      if (parseInt(roundedTemp)>= 70) {
+        return $(".js-outfit-rec").html("<p>Shorts<br>T-Shirt</p>");
       }
-      else {//res.redirect? to Register
-        $('.js-error-message').html('Could not load user');
-        
-      };
 
-  });*/
+      else if (parseInt(roundedTemp)>= 51 && roundedTemp<= 69) {
+        return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
+      }
+
+      else if (parseInt(roundedTemp)<= 50) 
+        return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
+
+  });
+//GET User on load
+*/
 //settings: (can be put inside variable)
 
   $(".js-location-form").on("submit", function(event) {
@@ -77,8 +86,8 @@ console.log(zipCode);
 
   $.ajax(locationPost).done(function (response) {
     console.log('Ya:', response);
-      if (req.body) {
-        location.href = 'profile.html';
+      if (response.body) {
+        res.json(user);
 
       }
       else {

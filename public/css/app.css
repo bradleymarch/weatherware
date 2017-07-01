@@ -25,6 +25,7 @@ body {
 	margin: 9px 50px 0px 0px;
 	float: right;
 	display: none;
+
 }
 
 .logout-button {
@@ -977,9 +978,11 @@ a:hover {
   	z-index: 1000;
   	height: auto;
   	width: 200px;
-  	margin: 36px 0 0 0;
+  	margin: 4% 0 0 0;
 
 }
+
+
 
 @media screen and (max-width: 1010px) {
   .testimonial1, .testimonial2 {
@@ -1001,9 +1004,11 @@ a:hover {
   .navspan {
 
   }
-
+.cloud-anchor {
+	display: block !important;
 }
-
+}
+/*mouseover and add class*/
 @media screen and (max-width: 1010px) {
   .navbar.responsive {
   	position: relative;
@@ -1016,15 +1021,16 @@ a:hover {
   	 right: 0;
 	}
 
-  nav img:hover ~ .dropdown-menu {
+ /* nav img:hover ~ .dropdown-menu {
   	display: block;
 
   	} 
-nav img:hover {
+*/
+  nav img:hover {
 	cursor: pointer;
 	cursor: hand;
+	}
 
-}
   .navbar.responsive a {
     position: absolute;
     right: 0;
@@ -1032,7 +1038,8 @@ nav img:hover {
     float: none;
     display: none;
     text-align: left;
-  }
+
+	}
 
 }
 
