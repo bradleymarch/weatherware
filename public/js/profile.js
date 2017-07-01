@@ -15,7 +15,6 @@ $(function() {
 
     const zipCode = $("#location-input-id").val();
     console.log(zipCode);
-    //save this setting for user each time it is SET
     const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
     const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
@@ -23,7 +22,6 @@ $(function() {
       const theTemp = response.list[0].temp.max;
 
       const theConditions = response.list[0].weather[0].description;
-      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
       const roundedTemp = theTemp.toFixed();
       const casedConditions = theConditions.toUpperCase();
 
@@ -62,7 +60,6 @@ $(function() {
 
     });
   });
-     //this.User.update({settings: {location: null}}, {$set: {settings: {location: zipCode} }}, {upsert: true}, function(err){console.log('whoops');})
      $("#temp_box1").on("click", function() {
       const zipCode = $("#location-input-id").val();
       const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
@@ -72,22 +69,18 @@ $(function() {
         const theTemp = response.list[0].temp.max;
 
         const theConditions = response.list[0].weather[0].description;
-      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
       const roundedTemp = theTemp.toFixed();
       const casedConditions = theConditions.toUpperCase();
       if (parseInt(roundedTemp)>= 75 && ($("#temp_box1").is(":checked"))) {
         return $(".js-outfit-rec").html("<p>Shorts<br>T-Shirt</p>");
-        //also save this setting to specific user
       }
 
       else if (parseInt(roundedTemp)>= 61 && roundedTemp<= 74 && ($("#temp_box1").is(":checked"))) {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
-        //also save this setting to specific user
       }
 
       else if (parseInt(roundedTemp)<= 60 && ($("#temp_box1").is(":checked"))) 
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
-      //also save this setting to specific user
 
     });
     });
@@ -100,50 +93,44 @@ $(function() {
         const theTemp = response.list[0].temp.max;
 
         const theConditions = response.list[0].weather[0].description;
-      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
       const roundedTemp = theTemp.toFixed();
       const casedConditions = theConditions.toUpperCase();
       if (parseInt(roundedTemp)>= 60 && ($("#temp_box2").is(":checked"))) {
         return $(".js-outfit-rec").html("<p>Shorts<br>T-Shirt</p>");
-        //also save this setting to specific user
       }
 
       else if (parseInt(roundedTemp)>= 41 && roundedTemp<= 59 && ($("#temp_box2").is(":checked"))) {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
-        //also save this setting to specific user
       }
 
       else if (parseInt(roundedTemp)<= 40 && ($("#temp_box2").is(":checked"))) 
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
-      //also save this setting to specific user
     });
     });
-//const neutral = 
-$("#temp_box3").on("click", function() {
-  const zipCode = $("#location-input-id").val();
-  const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
-  const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
+  $("#temp_box3").on("click", function() {
+    const zipCode = $("#location-input-id").val();
+    const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
+    const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
-  $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
-    const theTemp = response.list[0].temp.max;
+    $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
+      const theTemp = response.list[0].temp.max;
 
-    const theConditions = response.list[0].weather[0].description;
-      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
-      const roundedTemp = theTemp.toFixed();
-      const casedConditions = theConditions.toUpperCase();
+      const theConditions = response.list[0].weather[0].description;
+        const roundedTemp = theTemp.toFixed();
+        const casedConditions = theConditions.toUpperCase();
 
-      if (parseInt(roundedTemp)>= 70 && ($("#temp_box3").is(":checked"))) {
-        return $(".js-outfit-rec").html("<p>Shorts<br>T-Shirt</p>");
-      }
+        if (parseInt(roundedTemp)>= 70 && ($("#temp_box3").is(":checked"))) {
+          return $(".js-outfit-rec").html("<p>Shorts<br>T-Shirt</p>");
+        }
 
-      else if (parseInt(roundedTemp)>= 51 && roundedTemp<= 69 && ($("#temp_box3").is(":checked"))) {
-        return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
-      }
+        else if (parseInt(roundedTemp)>= 51 && roundedTemp<= 69 && ($("#temp_box3").is(":checked"))) {
+          return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
+        }
 
-      else if (parseInt(roundedTemp)<= 50 && ($("#temp_box3").is(":checked"))) 
-        return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
-    });
-});
+        else if (parseInt(roundedTemp)<= 50 && ($("#temp_box3").is(":checked"))) 
+          return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
+      });
+  });
 
 function displayApiError(error) {
  $(".error-notice").text(error);

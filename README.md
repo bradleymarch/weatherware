@@ -9,7 +9,7 @@ WeatherWear takes forecast data for your location (from the Open Weather Map API
 Sign up for a FREE account, SET your location, and update your controls. That's it. Happy Weathering!
 
 
-live link to app: https://serene-taiga-87972.herokuapp.com/login.html
+live link to app: https://serene-taiga-87972.herokuapp.com/
 
 This is a full-stack application as part of a capstone project with Thinkful's web development bootcamp.
 In this project I used HTML, CSS, CSS animations, Javascript, Jquery, Node, Mongoose, Express, Mocha, and Chai.
