@@ -12,7 +12,6 @@ function loginUser(username, password) {
   };
 
   $.ajax(settings).done(function (response) {
-    console.log('Ya:', response);
     if (response.user) {
       const getUser = {
         url: "/users/settings",
@@ -28,7 +27,7 @@ function loginUser(username, password) {
           $('.js-success-message2').html("Welcome, 'username'!");
 
         }
-      else {//res.redirect? to Register
+      else {
         $('.js-error-message').html('Could not load user');
         
       };
