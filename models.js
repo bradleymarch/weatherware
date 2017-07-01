@@ -17,17 +17,17 @@ const userSchema = mongoose.Schema({
 	},
 });
 
- userSchema.methods.apiRepr = function() {
-    return {
-        username: this.username || '',
-        password: this.username || '',
-        settings: {
+userSchema.methods.apiRepr = function() {
+	return {
+		username: this.username || '',
+		password: this.username || '',
+		settings: {
 
-		location: String,
-		tempSensitivity: {type: String, default: "neutral"},
-		
+			location: String,
+			tempSensitivity: {type: String, default: "neutral"},
+			
 		},
-    };
+	};
 } 
 
 userSchema.methods.validatePassword = function(password) {

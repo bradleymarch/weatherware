@@ -24,11 +24,11 @@ function seedUserData() {
 	seedData[5].password = password;
 	const hashedPassword = bcrypt.hash(password, 10);
 	return hashedPassword
-		.then(_hashedPassword => {
-			seedData[5].password = _hashedPassword;
-			console.warn('\n Seeding database');
-			return User.create(seedData);
-		})
+	.then(_hashedPassword => {
+		seedData[5].password = _hashedPassword;
+		console.warn('\n Seeding database');
+		return User.create(seedData);
+	})
 }
 
 
@@ -75,15 +75,15 @@ describe('Users API resource', function() {
 			let res;
 			let agent = chai.request.agent(app);
 			return agent
-				.post('/users/login')
-				.auth('testuser', 'password')
-				.then(_res => {				
-					res = _res;
-					res.should.have.status(200);
-					res.body.user.username.should.equal('testuser');
-					res.body.user.should.include.keys(
-						'username', 'password');
-				})
+			.post('/users/login')
+			.auth('testuser', 'password')
+			.then(_res => {				
+				res = _res;
+				res.should.have.status(200);
+				res.body.user.username.should.equal('testuser');
+				res.body.user.should.include.keys(
+					'username', 'password');
+			})
 		});
 	});
 
@@ -96,12 +96,12 @@ describe('Users API resource', function() {
 				.auth('testuser', 'password')
 				.then(() => {				
 					return agent.get('/users/logout')
-						.then(res => {
-							res.should.have.status(200);
-							res.redirects.should.have.lengthOf(1);							
-						})					
+					.then(res => {
+						res.should.have.status(200);
+						res.redirects.should.have.lengthOf(1);							
+					})					
 				});
-		});
+			});
 	});
 
 	describe('POST endpoint to create new user', function() {
@@ -112,19 +112,19 @@ describe('Users API resource', function() {
 			let testPassword = 'password123';
 			
 			return chai.request(app)
-				.post('/users/register')
-				.send({username: testUsername, password: testPassword})
-				.then(res => {							
-					res.should.have.status(201);
-					res.body.user.username.should.equal(testUsername);
-					res.body.user.should.include.keys(
+			.post('/users/register')
+			.send({username: testUsername, password: testPassword})
+			.then(res => {							
+				res.should.have.status(201);
+				res.body.user.username.should.equal(testUsername);
+				res.body.user.should.include.keys(
 					'username', 'password');			
-					User.findOne({username: testUsername})
-						.then(user => {
-							user.should.exist;
-							user.username.should.equal(testUsername);
-						})
-				});
+				User.findOne({username: testUsername})
+				.then(user => {
+					user.should.exist;
+					user.username.should.equal(testUsername);
+				})
+			});
 		});
 	});
 });

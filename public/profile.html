@@ -3,19 +3,18 @@
 <head>
 	<title>WeatherWear</title>
 	<link rel="stylesheet" type="text/css" href="./css/app.css">
-<link href="https://fonts.googleapis.com/css?family=Gruppo|Londrina+Outline" rel="stylesheet">	
-<link rel="icon" 
+	<link href="https://fonts.googleapis.com/css?family=Gruppo|Londrina+Outline" rel="stylesheet">	
+	<link rel="icon" 
 	type="image/png" 
 	href="./images/cloud.png">
 </head>
 <body>
-<div id="profile_view" class="profile-view js-profile-view">
+	<div id="profile_view" class="profile-view js-profile-view">
 		<nav id="myTopNav" class="navbar responsive">
 			<span class="navspan">
 				<a href="index.html">WeatherWear</a>
 				<a href="about.html">About</a>
 				<a href="login.html">Login</a>
-				<!--<a class="hidden js-hidden" href="profile.html">MyWeatherWear</a>-->
 				<a href="register.html" class=".js-register-link">Register</a>
 			</span>
 			
@@ -36,59 +35,59 @@
 			<h2 class="settings-title">Settings</h2>
 			<div class="success-message2 js-success-message2"></div>
 			<h3 class="settings-headers">Location</h3>
-			      <form class="js-location-form">
-            <input pattern="(\d{5}([\-]\d{4})?)" id="location-input-id" type="text" class="location-input" placeholder="Zipcode">
-            <button class="location-button js-location-button" type="search">Set</button>
-            
-        </form>
-        
-        <br>
+			<form class="js-location-form">
+				<input pattern="(\d{5}([\-]\d{4})?)" id="location-input-id" type="text" class="location-input" placeholder="Zipcode">
+				<button class="location-button js-location-button" type="search">Set</button>
+				
+			</form>
+			
+			<br>
 			<h3 class="settings-headers">Controls</h3>
 			<form id="radio_form" type="submit">
-			<label class="radio-label-font">Always cold:
-				<input name="temp-box" class="temp-box-class" id="temp_box1" type="radio"></label>
-				<br>
-				<br>
-				<label class="radio-label-font">Always warm:
-					<input name="temp-box" class="temp-box-class" id="temp_box2" type="radio"></label>
+				<label class="radio-label-font">Always cold:
+					<input name="temp-box" class="temp-box-class" id="temp_box1" type="radio"></label>
 					<br>
 					<br>
-					<label class="radio-label-font">Neutral:
-						<input name="temp-box" class="temp-box-class" id="temp_box3" type="radio" checked></label>
+					<label class="radio-label-font">Always warm:
+						<input name="temp-box" class="temp-box-class" id="temp_box2" type="radio"></label>
 						<br>
+						<br>
+						<label class="radio-label-font">Neutral:
+							<input name="temp-box" class="temp-box-class" id="temp_box3" type="radio" checked></label>
+							<br>
 						</form>
 						<!--<form class="js-save-controls-form">
 							<button class="save-controls-button js-save-controls-button"><a class="save-controls-button-text" href="/profile.html">Save</a></button>
-							</form> -->
-							<br>
-							<br>
-							<br>
-								<form class="logout js-logout">
-								<button class="logout-button"><a class="logout-button-text" href="/users/logout">Logout</a></button>
-								</form>
-									</div>
+						</form> -->
+						<br>
+						<br>
+						<br>
+						<form class="logout js-logout">
+							<button class="logout-button"><a class="logout-button-text" href="/users/logout">Logout</a></button>
+						</form>
+					</div>
 
-								<div class="main">
-									<section class="profile-heading-div type2">
+					<div class="main">
+						<section class="profile-heading-div type2">
 
-										<h1>My WeatherWear</h1>
-									</section>
-									<section class="forecast-container">
-									<p  class="today">Today's Forecast</p>
-								
-									<div id="forecast_data" class="forecast-data js-forecast-data forecast-data-overlay">
-									<div class="outfit-rec js-outfit-rec waitForIt">
-									</div>
-									<div class="temp-conditions js-temp-conditions"></div>
-									</div>
-									
-										
-									</section>
-									<button class="tomorrow-button js-tomorrow-button hidden" type="button">Tomorrow?</button>
+							<h1>My WeatherWear</h1>
+						</section>
+						<section class="forecast-container">
+							<p  class="today">Today's Forecast</p>
+							
+							<div id="forecast_data" class="forecast-data js-forecast-data forecast-data-overlay">
+								<div class="outfit-rec js-outfit-rec waitForIt">
 								</div>
+								<div class="temp-conditions js-temp-conditions"></div>
 							</div>
-							<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-							<script src="./js/profile.js">	
-							</script>
-</body>
-</html>
+							
+							
+						</section>
+						<button class="tomorrow-button js-tomorrow-button hidden" type="button">Tomorrow?</button>
+					</div>
+				</div>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+				<script src="./js/profile.js">	
+				</script>
+			</body>
+			</html>

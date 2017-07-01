@@ -13,33 +13,33 @@ function loginUser(username, password) {
 
   $.ajax(settings).done(function (response) {
     console.log('Ya:', response);
-      if (response.user) {
-        const getUser = {
-          url: "/users/settings",
-          method: "GET",
-          data: window.location = '/profile.html',
-          contentType: 'application/json',
-          dataType: 'json',
-        };
+    if (response.user) {
+      const getUser = {
+        url: "/users/settings",
+        method: "GET",
+        data: window.location = '/profile.html',
+        contentType: 'application/json',
+        dataType: 'json',
+      };
 
-  $.ajax(getUser).done(function (response) {
-    console.log('Ya:', response);
-      if (response.user) {
-        $('.js-success-message2').html("Welcome, 'username'!");
+      $.ajax(getUser).done(function (response) {
+        console.log('Ya:', response);
+        if (response.user) {
+          $('.js-success-message2').html("Welcome, 'username'!");
 
-      }
+        }
       else {//res.redirect? to Register
         $('.js-error-message').html('Could not load user');
         
       };
 
-  });
+    });
 
-      }
-      else {
-        $('.js-login-form')[0].reset();
-        $('.js-error-message').html('Invalid username or password');
-      }
+    }
+    else {
+      $('.js-login-form')[0].reset();
+      $('.js-error-message').html('Invalid username or password');
+    }
   });
 
 

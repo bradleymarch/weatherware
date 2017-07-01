@@ -13,21 +13,21 @@ function registerUser(username, password) {
       $('.js-error-message').html(message);
     },
   };
-$.ajax(settings)
-    .done(function (response) {
-      console.log(response);
-      $('.js-success-message').html('User created!<br>Redirecting to Login...');
-      setTimeout(function(){return location.href = '/login.html'}, 1000);
-    })
+  $.ajax(settings)
+  .done(function (response) {
+    console.log(response);
+    $('.js-success-message').html('User created!<br>Redirecting to Login...');
+    setTimeout(function(){return location.href = '/login.html'}, 1000);
+  })
 }
-  
+
 function watchRegister() {
   $(".js-register-form").submit(function(event) {
     event.preventDefault();
     var username = $("#register_form_username").val();
     var password = $("#register_form_password").val();
     
-      registerUser(username, password);
+    registerUser(username, password);
   });
 }
 
