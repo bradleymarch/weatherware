@@ -40,7 +40,7 @@ $(function() {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
 
     });
-    const locationPost = {
+   /* const locationPost = {
       url: "/users/location",
       method: "POST",
       data: JSON.stringify({zipCode:zipCode}),
@@ -58,7 +58,7 @@ $(function() {
         
       }
 
-    });
+    });*/
   });
      $("#temp_box1").on("click", function() {
       const zipCode = $("#location-input-id").val();
