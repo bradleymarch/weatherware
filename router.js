@@ -166,6 +166,9 @@ router.delete('/:id', loggedIn, (req, res, next) => {
       req.flash("error", err);
       return res.redirect("register.html");
     }
+
+  });
+});
 router.use('*', function(req, res) {
   res.status(404).json({message: 'Not Found'});
 });
