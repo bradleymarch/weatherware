@@ -162,7 +162,7 @@ router.get('/me', loggedIn, (req, res, next) => {
 );
 router.delete('/:id', (req, res) => {
   User
-  .findByIdAndUpdate(req.params.id)
+  .findByIdAndUpdate(req.params._id)
   .exec()
   .then(doc => {
     if (!doc) { return res.status(404).end(); }
