@@ -169,10 +169,10 @@ describe('DELETE endpoint for user account', function() {
 
 		it('should delete the user account', function() {
 			let agent = chai.request.agent(app);
-			return agent
-				.post('/users/login')
-				.auth('testuser', 'password')
-				.then(() => {				
+			//return agent
+				//.post('/users/login')
+				//.auth('testuser', 'password')
+				//.then(() => {				
 					return agent
 						.delete('/users/:id')
 						.then(res => {
@@ -183,6 +183,6 @@ describe('DELETE endpoint for user account', function() {
 									should.not.exist(res);
 								})
 						})					
-				});
+				//});
 		});
 	});
