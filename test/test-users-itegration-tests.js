@@ -87,7 +87,7 @@ describe('Users API resource', function() {
 		it('should sign out the user and redirect', function() {
 			let agent = chai.request.agent(app);
 			return agent
-				.get('/users/logout') // first have to log in
+				.get('/users/logout') 
 				.auth('testuser', 'password')
 				.then(() => {				
 					return agent.get('/users/logout')
@@ -170,7 +170,7 @@ describe('DELETE endpoint for user account', function() {
 		it('should delete the user account', function() {
 			let agent = chai.request.agent(app);
 			return agent
-				.get('/users/login') // first have to log in
+				.get('/users/:id')
 				.auth('testuser', 'password')
 				.then(() => {				
 					return agent
