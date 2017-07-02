@@ -169,22 +169,23 @@ describe('DELETE endpoint for user account', function() {
 
 		it('should delete the user account', function() {
 			let agent = chai.request.agent(app);
-			//return agent
+			return agent
 				.get('/users')
-				//.auth('testuser', 'password')
-				//.then(() => {				
+				.auth('testuser', 'password')
+				.then((res) => {	
+							
 					return agent
-						.delete('/users/:id')
+						.delete(`/users/${res.body[0]._id}`)
 						.then(res => {
 							res.should.have.status(200);
-							return User
+							/*return User
 								.findOne({username: 'testuser'})
 								.then(res => {
 									should.not.exist(res);
 								})
-								
+								*/
 						})					
-				//});
+				});
 		});
 	});
 });

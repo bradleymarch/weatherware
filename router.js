@@ -143,7 +143,7 @@ router.post('/location', (req, res, err) => {
   });
 });
 */
-router.get('/users', (req, res) => {
+router.get('/', (req, res) => {
  User
   .find({})
   .exec()
@@ -175,10 +175,10 @@ router.get('/me', loggedIn, (req, res, next) => {
 
 router.delete('/:id', (req, res) => {
   User
-  .findByIdAndRemove(req.user)
+  .findByIdAndRemove(req.params.id)
   .exec()
   .then(doc => {
-    if (!doc) { return res.status(404).end(); }
+    return res.status(200).end(); 
   })
   .catch(err => next(err));
 });
