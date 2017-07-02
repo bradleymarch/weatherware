@@ -170,7 +170,7 @@ describe('DELETE endpoint for user account', function() {
 		it('should delete the user account', function() {
 			let agent = chai.request.agent(app);
 			//return agent
-				//.post('/users/login')
+				.get('/users')
 				//.auth('testuser', 'password')
 				//.then(() => {				
 					return agent

@@ -143,6 +143,17 @@ router.post('/location', (req, res, err) => {
   });
 });
 */
+router.get('/users', (req, res) => {
+ User
+  .find({})
+  .exec()
+  .then(doc => {
+    console.log('hi');
+    if (doc) { return res.json(doc) }
+  })
+  .catch(err => next(err));
+});
+
 router.get('/logout', (req, res) => {
   req.session.destroy(function (err) {
     res.redirect('/index.html');
