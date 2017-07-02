@@ -40,7 +40,7 @@ function generateUserData() {
 		settings: {
 
 			location: "12345",
-			tempSensitivity: {type: faker.string(), default: "test"},
+			tempSensitivity: {type: "faker", default: "test"},
 
 		}
 	}
@@ -128,7 +128,8 @@ describe('Users API resource', function() {
 		});
 	});
 });
-describe('PUT endpoint to update settings', function() {
+/*
+describe('PATCH endpoint to update settings', function() {
 
 		it('should save changes settings', function() {
 			let agent = chai.request.agent(app);
@@ -168,7 +169,7 @@ describe('PUT endpoint to update settings', function() {
 						});			
 				});
 		});
-	});
+	});*/
 describe('DELETE endpoint for user account', function() {
 
 		it('should delete the user account', function() {
@@ -178,7 +179,7 @@ describe('DELETE endpoint for user account', function() {
 				.auth('testuser', 'password')
 				.then(() => {				
 					return agent
-						.delete('/users/_id')
+						.delete('/users/:id')
 						.then(res => {
 							res.should.have.status(200);
 							return User
