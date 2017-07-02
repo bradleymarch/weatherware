@@ -128,3 +128,65 @@ describe('Users API resource', function() {
 		});
 	});
 });
+describe('PUT endpoint to update settings', function() {
+
+		it('should save changes settings', function() {
+			let agent = chai.request.agent(app);
+			let testEntry = {
+		        username: 'yeah',
+		        password: 'ok',
+		        settings: {
+		        	tempSensitivity: "Always cold",
+		        	location: "12345",
+		        }
+		        
+        				}
+			return agent
+				.get('/users/login') // first have to log in
+				.auth('testuser', 'password')
+				.then((res) => {
+					testEntry.id = res.body.user.adjustmentEntries[0].id; // gets id of entry to change				
+					return agent
+						.put('/users/settings')
+						.send(testEntry)
+						.then(res => {
+							let resEntry = res.body.user.adjustmentEntries[0]
+							res.should.have.status(200);
+							resEntry.username.should.equal(testEntry.username);
+							resEntry.password.should.equal(testEntry.password);
+							resEntry.settings.should.equal(testEntry.settings);
+							
+							return User
+								.findOne({username: 'testuser'})
+								.then(user => {
+									let entry = user.adjustmentEntries[0];
+									entry.username.should.equal(testEntry.username);
+									entry.password.should.equal(testEntry.password);
+									entry.settings.should.equal(testEntry.settings);
+									
+								})		
+						});			
+				});
+		});
+	});
+describe('DELETE endpoint for user account', function() {
+
+		it('should delete the user account', function() {
+			let agent = chai.request.agent(app);
+			return agent
+				.get('/users/login') // first have to log in
+				.auth('testuser', 'password')
+				.then(() => {				
+					return agent
+						.delete('/users/_id')
+						.then(res => {
+							res.should.have.status(200);
+							return User
+								.findOne({username: 'testuser'})
+								.then(res => {
+									should.not.exist(res);
+								})
+						})					
+				});
+		});
+	});

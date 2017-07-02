@@ -147,6 +147,7 @@ router.get('/logout', (req, res) => {
     res.redirect('/index.html');
   });
 });
+
 function loggedIn(req, res, next) {
   if (req.user) {
     next();
@@ -159,7 +160,11 @@ router.get('/me', loggedIn, (req, res, next) => {
   res.json({user: req.user.apiRepr()});
 }
 );
-
+router.delete('/_id', (req, res) => {
+  res.delete(req.params._id);
+  console.log(`Deleted user \`${req.params.id}\``);
+  res.status(204).end();
+});
 router.use('*', function(req, res) {
   res.status(404).json({message: 'Not Found'});
 });
