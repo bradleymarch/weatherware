@@ -137,7 +137,7 @@ $(".js-delete-user-form").on("submit", function(event) {
       event.preventDefault();
 console.log("ok");
 const deleteUser = {
-      url: "/users/_id",
+      url: "/users/:id",
       method: "DELETE",
       contentType: 'application/json',
       dataType: 'json',
@@ -154,9 +154,6 @@ const deleteUser = {
       }
 
     });
-
-
-
 
 });
 

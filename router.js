@@ -160,11 +160,12 @@ router.get('/me', loggedIn, (req, res, next) => {
   res.json({user: req.user.apiRepr()});
 }
 );
-router.delete('/_id', (req, res) => {
-  res.delete(req.params._id);
-  console.log(`Deleted user \`${req.params.id}\``);
-  res.status(204).end();
-});
+router.delete('/:id', loggedIn, (req, res, next) => {
+  User.findOneAndRemove({_id: req.params.id}, (err) => {
+    if (err) {
+      req.flash("error", err);
+      return res.redirect("register.html");
+    }
 router.use('*', function(req, res) {
   res.status(404).json({message: 'Not Found'});
 });
