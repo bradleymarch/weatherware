@@ -164,7 +164,7 @@ router.get('/me', loggedIn, (req, res, next) => {
 
 router.delete('/:id', (req, res) => {
   User
-  .findByIdAndRemove(req.user.id)
+  .findByIdAndRemove(req.user)
   .exec()
   .then(doc => {
     if (!doc) { return res.status(404).end(); }
