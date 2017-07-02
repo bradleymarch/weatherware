@@ -126,7 +126,7 @@ router.post('/location', (req, res, err) => {
   console.log(req.body);
 
   User
-  .findByIdAndUpdate(req.user._id, { $set: { settings:{location: req.body.zipCode} }}, { new: true }, (err, user) => {
+  .findByIdAndUpdate(req.session.user._id, { $set: { settings:{location: req.body.zipCode} }}, { new: true }, (err, user) => {
     if (err) res.send(err);
 
     res.json(user);
@@ -160,14 +160,14 @@ router.get('/me', loggedIn, (req, res, next) => {
   res.json({user: req.user.apiRepr()});
 }
 );
-router.delete('/:id', loggedIn, (req, res, next) => {
-  User.findOneAndRemove({_id: req.params.id}, (err) => {
-    if (err) {
-      req.flash("error", err);
-      return res.redirect("register.html");
-    }
-
-  });
+router.delete('/:id', (req, res) => {
+  User
+  .findByIdAndUpdate(req.params.id)
+  .exec()
+  .then(doc => {
+    if (!doc) { return res.status(404).end(); }
+  })
+  .catch(err => next(err));
 });
 router.use('*', function(req, res) {
   res.status(404).json({message: 'Not Found'});

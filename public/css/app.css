@@ -1015,6 +1015,10 @@ a:hover {
 
 }
 
+.cloud-anchor {
+	display: none !important;
+}
+
 
 
 @media screen and (max-width: 1010px) {
@@ -1029,6 +1033,7 @@ a:hover {
   .navbar a {
     float: right;
     display: block;
+    position: fixed;
   }
 
   .heading {
@@ -1039,12 +1044,13 @@ a:hover {
   }
 .cloud-anchor {
 	display: block !important;
+	position: fixed;
 }
 }
 /*mouseover and add class*/
 @media screen and (max-width: 1010px) {
   .navbar.responsive {
-  	position: relative;
+  	position: fixed;
   }
 
    .dropdown-cloud {

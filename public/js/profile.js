@@ -134,26 +134,26 @@ $(function() {
 console.log('hey');
 $(".js-delete-user-form").on("submit", function(event) {
   location.href = "register.html";
-      event.preventDefault();
-console.log("ok");
-const deleteUser = {
-      url: "/users/:id",
-      method: "DELETE",
-      contentType: 'application/json',
-      dataType: 'json',
-    };
+  event.preventDefault();
+  console.log("ok");
+  const deleteUser = {
+    url: "/users/:id",
+    method: "DELETE",
+    contentType: 'application/json',
+    dataType: 'json',
+  };
 
-    $.ajax(deleteUser).done(function (response) {
-      if (!response.user) {
-        console.log("User deleted");
-        
-      }
-      else {
-        location.href = "profile.html";
-        
-      }
+  $.ajax(deleteUser).done(function (response) {
+    if (!response.user) {
+      console.log("User deleted");
 
-    });
+    }
+    else {
+      location.href = "profile.html";
+
+    }
+
+  });
 
 });
 
