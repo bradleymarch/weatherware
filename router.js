@@ -162,7 +162,7 @@ router.get('/me', loggedIn, (req, res, next) => {
 }
 );
 
-router.delete('/:id', (req, res) => {
+router.delete('users/:id', (req, res) => {
   User
   .findByIdAndRemove(req.user._id)
   .exec()
