@@ -132,6 +132,20 @@ $(function() {
       });
   });
 console.log('hey');
+
+$(".js-logout-form").on("submit", function(event) {
+
+  event.preventDefault();
+  const logout = {
+    url: "/users/logout",
+    method: "GET",
+    contentType: 'application/json',
+    };
+  $.ajax(logout).done(function (response) {
+    console.log('logged out');
+  });
+  
+});
 $(".js-delete-user-form").on("submit", function(event) {
   location.href = "register.html";
   event.preventDefault();

@@ -160,9 +160,10 @@ router.get('/me', loggedIn, (req, res, next) => {
   res.json({user: req.user.apiRepr()});
 }
 );
-router.delete('/:id', (req, res) => {
+
+router.delete('users/:id', (req, res) => {
   User
-  .findByIdAndUpdate(req.params._id)
+  .findByIdAndRemove(req.user._id)
   .exec()
   .then(doc => {
     if (!doc) { return res.status(404).end(); }
