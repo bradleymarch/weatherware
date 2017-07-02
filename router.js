@@ -134,7 +134,7 @@ router.post('/location', (req, res, err) => {
 
 });
 
-router.get('/settings', (req, res, err) => {
+/*router.patch('/settings', (req, res, err) => {
 
   User
   .findById(req.user._id, (err, user) => {
@@ -142,6 +142,7 @@ router.get('/settings', (req, res, err) => {
     res.json(user);
   });
 });
+*/
 router.get('/logout', (req, res) => {
   req.session.destroy(function (err) {
     res.redirect('/index.html');

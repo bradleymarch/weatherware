@@ -142,7 +142,7 @@ $(".js-logout-form").on("submit", function(event) {
     contentType: 'application/json',
     };
   $.ajax(logout).done(function (response) {
-    console.log('logged out');
+    console.log('logged ut');
   });
   
 });
@@ -170,7 +170,7 @@ $(".js-delete-user-form").on("submit", function(event) {
   });
 
 });
-
+/*
 function displayApiError(error) {
  $(".error-notice").text(error);
 }
@@ -178,17 +178,20 @@ function displayApiError(error) {
 function displayInvalidLocationError() {
  $(".error-notice").text("The location you entered is invalid.  Please select another one.");
 }
+  $(".js-location-form").on("submit", function(event) {
+    function updateLocation(newLocation) {
+      const newLocation = { zip: zipCode };
+      const zipCode = $("#location-input-id").val();
+      const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
+      const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
-function updateLocation(newLocation) {
-  const newLocation = { zip: zipCode };
-  const zipCode = $("#location-input-id").val();
-  const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
-  const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
-
-  return $.ajax({
-    url: OPEN_WEATHER_MAP_API_KEY_URL,
-    method: 'PATCH',
-    data: newLocation,
+        return $.ajax({
+          url: OPEN_WEATHER_MAP_API_KEY_URL,
+          method: 'PATCH',
+          data: newLocation,
+        });
+      }
+      updateLocation();
   });
-}
+ */
 });
