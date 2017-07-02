@@ -37,12 +37,7 @@ function generateUserData() {
 	return {
 		username: faker.internet.userName(),
 		password: faker.internet.password(),
-		settings: {
-
-			location: "12345",
-			tempSensitivity: {type: "faker", default: "test"},
-
-		}
+		
 	}
 }
 
