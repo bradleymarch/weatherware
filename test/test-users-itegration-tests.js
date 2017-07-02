@@ -182,7 +182,7 @@ describe('DELETE endpoint for user account', function() {
 								.then(res => {
 									should.not.exist(res);
 								})
-								.done();
+								
 						})					
 				//});
 		});
