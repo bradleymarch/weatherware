@@ -122,7 +122,7 @@ describe('Users API resource', function() {
 			});
 		});
 	});
-});
+
 /*
 describe('PATCH endpoint to update settings', function() {
 
@@ -182,7 +182,9 @@ describe('DELETE endpoint for user account', function() {
 								.then(res => {
 									should.not.exist(res);
 								})
+								.done();
 						})					
 				//});
 		});
 	});
+});
