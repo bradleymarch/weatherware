@@ -18,7 +18,7 @@
 				<a href="register.html" class=".js-register-link">Register</a>
 			</span>
 			
-			<a class="cloud-anchor" href="login.html"><img src="./images/cloud.png" class="dropdown-cloud"></a>
+			<a class="cloud-anchor" href="index.html">Home <img src="./images/cloud.png" class="dropdown-cloud"></a>
 			
 			<ul class="dropdown-menu">
 				<li><a href="index.html" class="index-link">WeatherWear</a>WeatherWear</li>
@@ -31,7 +31,6 @@
 		<!--add a hidden class above later on-->
 		<nav class="profile-nav"></nav>
 		<div class="sidebar">
-			
 			<h2 class="settings-title">Settings</h2>
 			<div class="success-message2 js-success-message2"></div>
 			<h3 class="settings-headers">Location</h3>
@@ -44,15 +43,15 @@
 			<br>
 			<h3 class="settings-headers">Controls</h3>
 			<form id="radio_form" type="submit">
-				<label class="radio-label-font">Always cold:
+				<label class="radio-label-font">I'm Always cold:
 					<input name="temp-box" class="temp-box-class" id="temp_box1" type="radio"></label>
 					<br>
 					<br>
-					<label class="radio-label-font">Always warm:
+					<label class="radio-label-font">I'm Always warm:
 						<input name="temp-box" class="temp-box-class" id="temp_box2" type="radio"></label>
 						<br>
 						<br>
-						<label class="radio-label-font">Neutral:
+						<label class="radio-label-font">Neither:
 							<input name="temp-box" class="temp-box-class" id="temp_box3" type="radio" checked></label>
 							<br>
 						</form>
@@ -60,15 +59,16 @@
 							<button class="save-controls-button js-save-controls-button"><a class="save-controls-button-text" href="/profile.html">Save</a></button>
 						</form> -->
 						<br>
-						<form id="delete_form" class="delete-user-form js-delete-user-form">
-						<input type="hidden" value="user.id" name="">
-							<button type="submit" for="delete_form" class="delete-button delete-button-text js-delete-button">Delete Account</button>
-							</form>
-						<br>
-						<br>
-						<form id="logout_id" type="submit" class="logout-form js-logout-form">
+				
+					<form id="logout_id" type="submit" class="logout-form js-logout-form">
 							<button class="logout-button" for="logout_id"><a class="logout-button-text" href="/users/logout">Logout</a></button>
 						</form>
+						<br>
+						<br>
+					<form id="delete_form" class="delete-user-form js-delete-user-form">
+						<input type="hidden" value="user.id" name="delete-input">
+							<button type="submit" for="delete_form" class="delete-button delete-button-text js-delete-button">Delete<br>Account</button>
+							</form>
 					</div>
 
 					<div class="main">

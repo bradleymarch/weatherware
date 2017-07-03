@@ -30,14 +30,14 @@ body {
 
 .delete-button {
 	color: white;
-	font-size: 14px;
+	font-size: 10px;
 	font-family: 'Gruppo', cursive;
 	border-radius: 2px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
 	opacity: 0.75;
 	height: 36px;
-	width: 64px;
+	width: 56px;
 	margin: auto;
 	text-decoration: none;
 	border: none;
@@ -49,14 +49,14 @@ body {
 
 .logout-button {
 	color: white;
-	font-size: 14px;
+	font-size: 10px;
 	font-family: 'Gruppo', cursive;
 	border-radius: 2px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
 	opacity: 0.75;
 	height: 24px;
-	width: 64px;
+	width: 56px;
 	margin: auto;
 	text-decoration: none;
 	border: none;
@@ -409,7 +409,7 @@ body {
 .testimonial1, .testimonial2 {
 
 	font-size: 24px;
-	padding-bottom: 20px;
+	padding-bottom: 5px;
 }
 .login-logo {
 
@@ -516,9 +516,12 @@ body {
 
 }
 
-::-moz-placeholder { /* Firefox 19+ */
-	color: #D8DFE2;
-	opacity: 0.9;
+.location-input::-moz-placeholder { /* Firefox 19+ */
+	color: white;
+	opacity: 0.33;
+	text-align: center;
+	display: inline-block;
+
 
 }
 
@@ -759,7 +762,7 @@ h1 {
 	flex-basis: 33.33%;
 	float: left;
 	width: 140px;
-	height: 450px;
+	height: 500px;
 	font-family: 'Gruppo', cursive;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	margin-left: 20px;
@@ -927,18 +930,34 @@ h1 {
 	font-family: 'Gruppo', cursive;
 	padding:10px 10px 10px 5px;
 	display:block;
-
 	width: 88px;
-	height: 20px;
-	border:none;
-	color: white;
+	height: 100%;
+	border: none;
+	color: white !important;
 	border-bottom:1px solid white;
 	background: transparent;
 	outline: none;
 	margin: auto;
 	z-index: 900;
 }
+/*
+.location-input::-moz- { Firefox 19+ 
+	font-size: 16px;
+	font-family: 'Gruppo', cursive;
+	padding:10px 10px 10px 5px;
+	display:block;
+	width: 88px;
+	height: 20px;
+	border: none;
+	color: white !important;
+	border-bottom:1px solid white;
+	background: transparent;
+	outline: none;
+	margin: auto;
+	z-index: 900;
 
+}
+*/
 .my-weatherwear-heading {
 	font-family: 'Londrina Outline', cursive;
 	margin-bottom: 0px;
@@ -1021,7 +1040,7 @@ a:hover {
 
 
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1095px) {
   .testimonial1, .testimonial2 {
   	display: none; 
   }
@@ -1048,7 +1067,7 @@ a:hover {
 }
 }
 /*mouseover and add class*/
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1095px) {
   .navbar.responsive {
   	position: fixed;
   }
