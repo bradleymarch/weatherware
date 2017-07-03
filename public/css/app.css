@@ -396,20 +396,26 @@ body {
 
 .testimonial1 {
 	
-	margin: 20px 0 0 140px;
+	margin: 10px 0 0 140px;
 }
 
 
 .testimonial2 {
 
 	text-align: right;
-	margin: -110px 140px 0 20px;
+	margin: -90px 140px 0 20px;
 }
 
 .testimonial1, .testimonial2 {
 
 	font-size: 24px;
-	padding-bottom: 5px;
+	
+}
+
+@-moz-document url-prefix() {
+    .testimonial2 {
+        margin: -115px 140px 0 20px;
+    }
 }
 .login-logo {
 
@@ -549,7 +555,7 @@ body {
 }
 
 .horizontal-line-subtitle {
-	margin-top: 40px;
+	margin-top: 0px;
 	margin-bottom: 10px;
 	width: 15%;
 	border: 1px solid white;
@@ -701,15 +707,14 @@ h1 {
 }
 
 .slogan {
-	font-size: 30px;
+	font-size: 20px;
 	box-sizing: border-box;
 	display: block;
 	color: white;
 	text-align: center;
 	font-weight: normal;
 	margin: auto;
-	font-family: 'Londrina Outline', cursive;
-
+	font-family: 'Gruppo', cursive;
 }
 
 .today {
