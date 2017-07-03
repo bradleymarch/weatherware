@@ -433,7 +433,7 @@ body {
 
 .account-labels {
 	display: block;
-	padding-bottom: 5px;
+	padding-bottom: 8px;
 }
 
 .heading {
@@ -949,9 +949,9 @@ h1 {
 }
 
 .location-input {
-	font-size:16px;
+	font-size:22px;
 	font-family: 'Gruppo', cursive;
-	padding:5px 5px 5px 3px;
+	padding:3px 3px 3px 2px;
 	display:block;
 	width: 88px;
 	height: 100%;
@@ -1180,14 +1180,14 @@ a:hover {
 
 .location-button {
 	color: white;
-	font-size: 14px;
+	font-size: 16px;
 	font-family: 'Gruppo', cursive;
 	border-radius: 2px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
 	opacity: 0.75;
 	height: 36px;
-	width: 78px;
+	width: 88px;
 	margin: auto;
 	text-decoration: none;
 	border: none;
