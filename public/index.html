@@ -71,7 +71,7 @@
 			<p>Sign up for a FREE account and SET your location.  WeatherWear tells you the outfit you need for that day based on the weather.  Update your controls if you're someone who is "always hot," or "always cold," no matter the conditions.  That's it.  It's that simple.  Happy Weathering! </p>
 		</div>
 	</div>
-	<div id="login_view" class="login-view js-login-view">
+	<div id="register_view" class="register-view js-register-view">
 		<nav id="myTopNav" class="navbar responsive">
 			<span class="navspan">
 				<a href="index.html">WeatherWear</a>
@@ -80,38 +80,37 @@
 				<a class="hidden js-hidden" href="profile.html">MyWeatherWear</a>
 				<a href="register.html" class=".js-register-link">Register</a>
 			</span>
-			<a class="cloud-anchor" href="login.html">Login<img src="./images/cloud.png" class="dropdown-cloud"></a>
+			<a class="cloud-anchor" href="login.html">Login <img src="./images/cloud.png" class="dropdown-cloud"></a>
 			<ul class="dropdown-menu">
-				<<li><a href="index.html" class="index-link">WeatherWear</a>WeatherWear</li>
+				<li><a href="index.html" class="index-link">WeatherWear</a>WeatherWear</li>
 				<li><a href="about.html" class="about-link">About</a>About</li>
 				<li><a class="login-link js-login-link" href="login.html">Login</a>Login</li>
 				<a class="profile-link hidden js-hidden" href="profile.html"><li>MyWeatherWear</li>MyWeatherWear</a>
 				<li><a href="register.html" class="register-link .js-register-link">Register</a>Register</li>
 			</ul>
 		</nav>
-		<div class="empty-login-space"></div>
-		<div class="login-container js-login-container login-overlay js-login-overlay">
+		<div class="empty-register-space"></div>
+		<div class="register-container js-register-container register-overlay js-register-overlay">
 
-			<h3 class="login-logo js-login-logo">Login</h3>
-			<form class="login-form js-login-form">
+			<h3 class="login-logo js-login-logo">Register</h3>
+			<form class="login-form register-form js-register-form">
 				<div class="form-group">      
-					<input class="floating-label-input" id="login_form_username" type="text" required>
+					<input class="floating-label-input" name="username" id="register_form_username" type="text" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
-					<label class="floating-label" for="login_form_username">Username</label>
+					<label class="floating-label" for="register_form_username">New Username</label>
 				</div>
 
 				<div class="form-group">      
-					<input class="floating-label-input" id="login_form_password" type="password" required>
+					<input class="floating-label-input" name="password" id="register_form_password" type="password" required>
 					<span class="highlight"></span>
 					<span class="bar"></span>
-					<label class="floating-label" for="login_form_password">Password</label>
+					<label class="floating-label" for="register_form_password">New Password</label>
 				</div>
-				<button class="login-button js-login-button" type="submit">Enter</button>
+				<button id="create-username" class="login-button js-login-button" type="submit">Create</button>
 			</form>
-
-			<a href="register.html" class="register js-register">Not registered? Click here</a>
 			<div class="error-message js-error-message"></div>
+			<div class="success-message js-success-message"></div>
 		</div>
 	</div>
 

@@ -414,7 +414,7 @@ body {
 
 @-moz-document url-prefix() {
     .testimonial2 {
-        margin: -115px 140px 0 20px;
+        margin: -118px 140px 0 20px;
     }
 }
 .login-logo {
@@ -1079,10 +1079,14 @@ a:hover {
   .navspan {
 
   }
-.cloud-anchor {
+  .cloud-anchor {
 	display: block !important;
 	position: fixed;
-}
+	}
+   .cloud-image {
+   	width: 390px;
+   	height: 330px;
+   }
 }
 /*mouseover and add class*/
 @media screen and (max-width: 1095px) {
