@@ -431,7 +431,7 @@ body {
 	text-align: center;
 	color: white;
 	margin: 0 auto;
-	padding-top: 80px;
+	padding-top: 50px;
 	padding-bottom: 5px;
 	text-shadow: 1.25px 1.25px 1.25px rgba(0, 0, 0, 0.75);
 	z-index: 900;
@@ -697,6 +697,18 @@ h1 {
 .profile-nav {
 
 	height: 40px;
+
+}
+
+.slogan {
+	font-size: 30px;
+	box-sizing: border-box;
+	display: block;
+	color: white;
+	text-align: center;
+	font-weight: normal;
+	margin: auto;
+	font-family: 'Londrina Outline', cursive;
 
 }
 

@@ -149,11 +149,10 @@ $(".js-logout-form").on("submit", function(event) {
 $(".js-delete-user-form").on("submit", function(event) {
   location.href = "register.html";
   event.preventDefault();
-  console.log(req.user.id);
-  const USER_URL = "/" + req.user.id;
+ 
   const deleteUser = {
-    //url: "/users/:id",
-    url: USER_URL,
+    
+    url: '/users',
     method: "DELETE",
     contentType: 'application/json',
     dataType: 'json',

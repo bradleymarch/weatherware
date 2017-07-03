@@ -173,9 +173,10 @@ router.get('/me', loggedIn, (req, res, next) => {
 }
 );
 
-router.delete('/:id', (req, res) => {
+router.delete('/', (req, res) => {
+  console.log(req.user._id);
   User
-  .findByIdAndRemove(req.params.id)
+  .findByIdAndRemove(req.user._id)
   .exec()
   .then(doc => {
     return res.status(200).end(); 
