@@ -147,11 +147,13 @@ $(".js-logout-form").on("submit", function(event) {
   
 });
 $(".js-delete-user-form").on("submit", function(event) {
-  location.href = "register.html";
+  
   event.preventDefault();
-  console.log("ok");
+  console.log(req.user.id);
+  const USER_URL = "/" + req.user.id;
   const deleteUser = {
-    url: "/users/:id",
+    //url: "/users/:id",
+    url: USER_URL,
     method: "DELETE",
     contentType: 'application/json',
     dataType: 'json',
@@ -160,7 +162,7 @@ $(".js-delete-user-form").on("submit", function(event) {
   $.ajax(deleteUser).done(function (response) {
     if (!response.user) {
       console.log("User deleted");
-
+      location.href = "register.html";
     }
     else {
       location.href = "profile.html";

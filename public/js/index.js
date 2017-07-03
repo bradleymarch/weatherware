@@ -1,4 +1,4 @@
-$(function() {
+/*$(function() {
 
 	function myFunction() {
 		var x = document.getElementById("myTopNav");
