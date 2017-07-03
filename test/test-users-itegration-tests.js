@@ -176,6 +176,7 @@ describe('DELETE endpoint for user account', function() {
 							
 					return agent
 						.delete(`/users/${res.body[0]._id}`)
+						//.delete(res.body.user._id)
 						.then(res => {
 							res.should.have.status(200);
 							/*return User
