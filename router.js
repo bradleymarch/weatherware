@@ -173,7 +173,7 @@ router.get('/me', loggedIn, (req, res, next) => {
 }
 );
 
-router.delete('/', (req, res) => {
+router.delete('/', loggedIn, (req, res) => {
   console.log(req.user._id);
   User
   .findByIdAndRemove(req.user._id)
