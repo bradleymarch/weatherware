@@ -766,10 +766,11 @@ h1 {
 	font-family: 'Gruppo', cursive;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	margin-left: 20px;
-	margin-top: 125px;
+	margin-top: 5px;
 	border-radius: 2px;
 	z-index: 900;
 	background-color: #71ADB5;
+	margin-bottom: 20px;
 }
 
 .main {
