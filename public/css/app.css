@@ -36,8 +36,8 @@ body {
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
 	opacity: 0.75;
-	height: 36px;
-	width: 56px;
+	height: 18px;
+	width: 48px;
 	margin: auto;
 	text-decoration: none;
 	border: none;
@@ -49,13 +49,13 @@ body {
 
 .logout-button {
 	color: white;
-	font-size: 10px;
+	font-size: 12px;
 	font-family: 'Gruppo', cursive;
 	border-radius: 2px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
 	opacity: 0.75;
-	height: 24px;
+	height: 28px;
 	width: 56px;
 	margin: auto;
 	text-decoration: none;
@@ -431,6 +431,11 @@ body {
 	font-weight: normal;
 }
 
+.account-labels {
+	display: block;
+	padding-bottom: 5px;
+}
+
 .heading {
 	font-family: 'Londrina Outline', cursive;
 	font-size: 140px;
@@ -779,7 +784,7 @@ h1 {
 	flex-basis: 33.33%;
 	float: left;
 	width: 140px;
-	height: 500px;
+	height: 520px;
 	font-family: 'Gruppo', cursive;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	margin-left: 20px;
@@ -946,7 +951,7 @@ h1 {
 .location-input {
 	font-size:16px;
 	font-family: 'Gruppo', cursive;
-	padding:10px 10px 10px 5px;
+	padding:5px 5px 5px 3px;
 	display:block;
 	width: 88px;
 	height: 100%;
@@ -1181,8 +1186,8 @@ a:hover {
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
 	opacity: 0.75;
-	height: 24px;
-	width: 64px;
+	height: 36px;
+	width: 78px;
 	margin: auto;
 	text-decoration: none;
 	border: none;
