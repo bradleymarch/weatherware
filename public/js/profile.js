@@ -142,7 +142,7 @@ $(".js-logout-form").on("submit", function(event) {
     contentType: 'application/json',
     };
   $.ajax(logout).done(function (response) {
-    console.log('logged ut');
+    console.log('logged out');
   });
   
 });
