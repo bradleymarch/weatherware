@@ -1033,7 +1033,7 @@ button {
 	text-decoration: none;
 	/*margin-top: 20px;
 	margin-left: 170px;*/
-	margin: 9px 80px 9px 80px;
+	margin: 9px 80px 9px 50px;
 }
 
 a:hover {
@@ -1063,7 +1063,7 @@ a:hover {
 
 
 
-@media screen and (max-width: 1095px) {
+@media screen and (max-width: 1155px) {
   .testimonial1, .testimonial2 {
   	display: none; 
   }
@@ -1094,7 +1094,7 @@ a:hover {
    }
 }
 /*mouseover and add class*/
-@media screen and (max-width: 1095px) {
+@media screen and (max-width: 1155px) {
   .navbar.responsive {
   	position: fixed;
   }
