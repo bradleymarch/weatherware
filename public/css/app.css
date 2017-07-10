@@ -1062,13 +1062,34 @@ a:hover {
 }
 
 @media screen and (min-width : 0px) and  (max-width : 1154px) {
+.settings-title {
+	display: none;
+}
+.settings-headers {
+	margin-top: -10px;
+}
+.settings-header
+.logout-form {
+	margin-top: -20px;
+}
+.location-input {
+	width: 95%;
+	margin-top: -10px;
+}
+.location-button {
+	margin-bottom: 10px !important;
+}
 
+.location-input, .settings-headers {
+	font-size: 30px !important;
+}
 .about-content {
 	font-size: 30px;
 }
 
 .about-view {
-	height: 700px !important;
+	height: 100% !important;
+	padding-bottom: 10px;
 }
 
 .floating-label {
@@ -1088,9 +1109,23 @@ a:hover {
 .sidebar {
 	font-size: 24px !important;
 	height: 80%;
-	margin-top: -100px !important;
+	margin-top: -80px !important;
 	padding-bottom: 2px;
+	padding-top: 10px;
 
+}
+
+.today {
+	font-size: 30px !important;
+}
+
+.tempClass, .conditionsClass {
+
+	font-size: 30px !important;
+}
+
+.outfit-rec {
+	font-size: 48px !important;
 }
 
 button {
@@ -1105,7 +1140,7 @@ button {
 }
 
 a {
-	
+
 	font-size: 28px !important;
 }
 
