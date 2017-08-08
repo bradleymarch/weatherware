@@ -73,7 +73,7 @@ Here is some example code from the frontend:
   });
 ```
 
-Here is some example code form the backend:
+Here is some example code from the backend:
 ```
 const express = require('express');
 const {BasicStrategy} = require('passport-http');
