@@ -15,7 +15,7 @@ This is a full-stack application as part of a capstone project with Thinkful's w
 In this project I used HTML, CSS, CSS animations, Javascript, Jquery, Node, Mongoose, Express, Mocha, and Chai.
 
 Here is some example code from the frontend:
-
+```
   $(".js-location-form").on("submit", function(event) {
 
     event.preventDefault();
@@ -71,10 +71,10 @@ Here is some example code from the frontend:
 
     });
   });
-
+```
 
 Here is some example code form the backend:
-
+```
 const express = require('express');
 const {BasicStrategy} = require('passport-http');
 const jsonParser = require('body-parser').json();
@@ -190,7 +190,7 @@ router.post('/register', (req, res) => {
     res.status(500).json({message: 'Internal server error'});
   });
 });
-
+```
 
 
 
