@@ -140,7 +140,7 @@ body {
 }
 
 .about-content {
-	font-size: 20px;
+	font-size: 26px;
 	width: 67%;
 	color: white;
 	margin: auto;
@@ -211,8 +211,9 @@ body {
 
 }
 .empty-login-space {
-	height: 180px;
+	height: 75px;
 	width: 100%;
+	background-color: white;
 }
 .empty-register-space {
 	height: 180px;
@@ -433,6 +434,7 @@ body {
 
 .account-labels {
 	display: block;
+	font-size: 20px;
 	padding-bottom: 8px;
 }
 
@@ -450,7 +452,7 @@ body {
 
 .register {
 
-	font-size: 14px;
+	font-size: 18px;
 	margin: auto;
 	font-family: 'Gruppo', cursive;
 	text-decoration: none;
@@ -726,7 +728,7 @@ h1 {
 }
 
 .today {
-	font-size: 16px;
+	font-size: 26px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	font-family: 'Gruppo', cursive;
 	display: inline-block;
@@ -776,18 +778,11 @@ h1 {
     animation: flickerAnimation 7s infinite;
 }
 
-.animate-flicker-testimonials {
-	-webkit-animation: flickerAnimation 11s infinite;
-	-moz-animation: flickerAnimation 11s infinite;
-   -o-animation: flickerAnimation 11s infinite;
-    animation: flickerAnimation 11s infinite;
-}
-
 .sidebar {
 	flex-basis: 33.33%;
 	float: left;
-	width: 140px;
-	height: 520px;
+	width: 200px;
+	height: 540px;
 	font-family: 'Gruppo', cursive;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	margin-left: 20px;
@@ -904,8 +899,8 @@ h1 {
 	color: white;
 	font-weight: normal;
 	text-align: center;
-	font-size: 16px;
-
+	font-size: 24px;
+	margin-top: 0px;
 }
 /*
 .sidebar-overlay {
@@ -993,7 +988,7 @@ h1 {
 
 .radio-label-font {
 	font-weight: normal;
-	font-size: 12px;
+	font-size: 20px;
 	margin: 0px;
 	color: white;
 
@@ -1068,6 +1063,9 @@ a:hover {
 .settings-title {
 	display: none;
 }
+.account-labels {
+	margin-top: 40px;
+}
 .settings-headers {
 	margin-top: -10px;
 }
@@ -1095,16 +1093,6 @@ a:hover {
 	padding-bottom: 10px;
 }
 
-.floating-label {
-	font-size: 24px !important;
-}
-
-.floating-label-input {
-	font-size: 24px !important;
-
-
-}
-
 .radio-label-font {
 	font-size: 20px !important;
 }
@@ -1117,7 +1105,6 @@ a:hover {
 	padding-top: 10px;
 
 }
-
 
 .today {
 	font-size: 30px !important;
@@ -1149,6 +1136,14 @@ a {
 }
 
 }
+
+	.floating-label {
+		font-size: 24px !important;
+	}
+
+	.floating-label-input {
+		font-size: 24px !important;
+	}
 
 @media screen and (max-width: 1155px) {
   .testimonial1, .testimonial2 {
