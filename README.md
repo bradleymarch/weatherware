@@ -16,6 +16,14 @@ live link to app: http://serene-taiga-87972.herokuapp.com/
 This is a full-stack application as part of a capstone project with Thinkful's web development bootcamp.
 In this project I used HTML, CSS, CSS animations, Javascript, Jquery, Node, Mongoose, Express, Mocha, and Chai.
 
+Next Steps...
+
+Here are some features I'd like to add as I continue to iterate on this project:
+    1. User radio dial settings save with each user
+    2. A visual representation of the outfit will display along with the forecast
+    3. Users will be able to save their location for the forecast to display immediately as they log in
+    4. Email will be added and users will get email alerts on what to wear along with their alarm in the morning
+
 Here is some example code from the frontend:
 ```
   $(".js-location-form").on("submit", function(event) {
