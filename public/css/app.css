@@ -745,7 +745,6 @@ h1 {
 	border-radius: 2px;
 	z-index: 900;
 	background-color: #71ADB5;
-	margin-bottom: 20px;
 }
 
 .main {
@@ -822,7 +821,7 @@ h1 {
 }
 .forecast-container {
 
-	margin: auto;
+	margin-bottom: auto;
 	display: inline-block;
 	height: 500px;
 	box-sizing: border-box;
@@ -977,6 +976,7 @@ a:hover {
 	margin-top: 300px;
 	height: 450px;
 }
+
 .register-view, .login-view {
 	height: 1745px !important;
 }
@@ -1016,13 +1016,20 @@ a:hover {
 
 .sidebar {
 	font-size: 24px !important;
-	height: 80%;
-	margin-top: -60px !important;
-	padding-bottom: 2px;
+	height: 700px;
+	margin-top: 180px !important;
 	padding-top: 10px;
 
 }
-
+.profile-heading-div {
+	padding-top: 100px;
+}
+.main {
+	margin-top: 280px;
+}
+.profile-view {
+	height: 1550px !important;
+}
 .today {
 	font-size: 30px !important;
 }
@@ -1044,7 +1051,8 @@ button {
 }
 
 .profile-view {
-	height: 900px !important;
+	height: 1700px !important;
+
 }
 
 a {
