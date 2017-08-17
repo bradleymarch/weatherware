@@ -15,7 +15,7 @@ In this project I used HTML, CSS, CSS animations, Javascript, Jquery, Node, Mong
 live link to app: http://serene-taiga-87972.herokuapp.com/
 
 ![Site Landing Page](/public/images/weatherwearLaptop.png)
-![Sketch](/public/images/weatherwearSketch.jpg)
+![Sketch](/public/images/weatherwearSketch.JPG)
 
 Next Steps...
 
