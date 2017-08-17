@@ -15,6 +15,9 @@ In this project I used HTML, CSS, CSS animations, Javascript, Jquery, Node, Mong
 live link to app: http://serene-taiga-87972.herokuapp.com/
 
 ![Site Landing Page](/public/images/weatherwearLaptop.png)
+
+Here is a preliminary sketch of the app's user flows:
+
 ![Sketch](/public/images/weatherwearSketch.JPG)
 
 Next Steps...
