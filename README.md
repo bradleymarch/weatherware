@@ -8,13 +8,14 @@ WeatherWear takes forecast data for your location (from the Open Weather Map API
 
 Sign up for a FREE account, SET your location, and update your controls. That's it. Happy Weathering!
 
+This is a full-stack application as part of a capstone project with Thinkful's web development bootcamp.
+In this project I used HTML, CSS, CSS animations, Javascript, Jquery, Node, Mongoose, Express, Mocha, and Chai.
+
 
 live link to app: http://serene-taiga-87972.herokuapp.com/
 
-![Alt text](/public/images/weatherwearLaptop.png)
-
-This is a full-stack application as part of a capstone project with Thinkful's web development bootcamp.
-In this project I used HTML, CSS, CSS animations, Javascript, Jquery, Node, Mongoose, Express, Mocha, and Chai.
+![Site Landing Page](/public/images/weatherwearLaptop.png)
+![Sketch](/weatherwearSketch.jpg)
 
 Next Steps...
 
