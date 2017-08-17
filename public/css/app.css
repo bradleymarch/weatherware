@@ -756,6 +756,10 @@ h1 {
 	margin-right: 160px;
 }
 
+.more-empty-register-space, .more-empty-login-space {
+	display: none;
+}
+
 .forecast-data {
 	font-family: 'Gruppo', cursive;
 	font-size: 24px;
@@ -963,6 +967,18 @@ a:hover {
 @media screen and (min-width : 0px) and  (max-width : 1154px) {
 .settings-title {
 	display: none;
+}
+
+.login-container, .register-container, {
+	margin-top: 300px;
+	height: 900px;
+}
+.register-overlay, .login-overlay {
+	margin-top: 300px;
+	height: 450px;
+}
+.register-view, .login-view {
+	height: 1745px !important;
 }
 .account-labels {
 	margin-top: 40px;
