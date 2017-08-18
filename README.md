@@ -37,8 +37,6 @@ Here is some example code from the frontend:
     $(".waitForIt").removeClass("waitForIt");
 
     const zipCode = $("#location-input-id").val();
-    console.log(zipCode);
-    //save this setting for user each time it is SET
     const OPEN_WEATHER_MAP_API_KEY = "***it's***a***secret***";
     const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
@@ -46,7 +44,6 @@ Here is some example code from the frontend:
       const theTemp = response.list[0].temp.max;
 
       const theConditions = response.list[0].weather[0].description;
-      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
       const roundedTemp = theTemp.toFixed();
       const casedConditions = theConditions.toUpperCase();
 
