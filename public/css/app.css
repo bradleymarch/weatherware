@@ -917,7 +917,7 @@ button {
 	left: 0;
 	right: 0;
 	top: 0;
-	height: 36px;
+	height: 48px;
 	color: white;
 	background-color: white;
 	display: inline-block;
@@ -1028,7 +1028,7 @@ a:hover {
 	margin-top: 280px;
 }
 .profile-view {
-	height: 1550px !important;
+	height: 150px !important;
 }
 .today {
 	font-size: 30px !important;
@@ -1088,8 +1088,8 @@ a {
 
   }
   .cloud-anchor {
-	display: block !important;
-	position: fixed;
+		display: block !important;
+		position: fixed;
 	}
    .cloud-image {
    	width: 390px;
