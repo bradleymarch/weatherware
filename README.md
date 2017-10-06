@@ -8,14 +8,28 @@ WeatherWear takes forecast data for your location (from the Open Weather Map API
 
 Sign up for a FREE account, SET your location, and update your controls. That's it. Happy Weathering!
 
-
-live link to app: https://serene-taiga-87972.herokuapp.com/
-
 This is a full-stack application as part of a capstone project with Thinkful's web development bootcamp.
 In this project I used HTML, CSS, CSS animations, Javascript, Jquery, Node, Mongoose, Express, Mocha, and Chai.
 
-Here is some example code from the frontend:
 
+live link to app: http://serene-taiga-87972.herokuapp.com/
+
+![Site Landing Page](/public/images/weatherwearLaptop.png)
+
+Here is a preliminary sketch of the app's user flows:
+
+![Sketch](/public/images/weatherwearSketch.JPG)
+
+Next Steps...
+
+Here are some features I'd like to add as I continue to iterate on this project:
+    1. User radio dial settings save with each user
+    2. A visual representation of the outfit will display along with the forecast
+    3. Users will be able to save their location for the forecast to display immediately as they log in
+    4. Email will be added and users will get email alerts on what to wear along with their alarm in the morning
+
+Here is some example code from the frontend:
+```
   $(".js-location-form").on("submit", function(event) {
 
     event.preventDefault();
@@ -23,20 +37,17 @@ Here is some example code from the frontend:
     $(".waitForIt").removeClass("waitForIt");
 
     const zipCode = $("#location-input-id").val();
-    console.log(zipCode);
-    //save this setting for user each time it is SET
-    const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
+    const OPEN_WEATHER_MAP_API_KEY = "***it's***a***secret***";
     const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
     $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
       const theTemp = response.list[0].temp.max;
 
       const theConditions = response.list[0].weather[0].description;
-      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
       const roundedTemp = theTemp.toFixed();
       const casedConditions = theConditions.toUpperCase();
 
-      $(".js-temp-conditions").html('<p class="tempClass">Temperature' +': ' + roundedTemp + ' °F</p><p class="conditionsClass">Conditions' +': ' + casedConditions + '</p>');
+      $(".js-temp-conditions").html('<p class="tempClass">Temperature' +': ' + roundedTemp + ' °F</p><p  class="conditionsClass">Conditions' +': ' + casedConditions + '</p>');
 
 
       if (parseInt(roundedTemp)>= 70) {
@@ -71,10 +82,10 @@ Here is some example code from the frontend:
 
     });
   });
+```
 
-
-Here is some example code form the backend:
-
+Here is some example code from the backend:
+```
 const express = require('express');
 const {BasicStrategy} = require('passport-http');
 const jsonParser = require('body-parser').json();
@@ -190,7 +201,7 @@ router.post('/register', (req, res) => {
     res.status(500).json({message: 'Internal server error'});
   });
 });
-
+```
 
 
 
