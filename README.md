@@ -38,7 +38,7 @@ Here is some example code from the frontend:
 
     const zipCode = $("#location-input-id").val();
     const OPEN_WEATHER_MAP_API_KEY = "***it's***a***secret***";
-    const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
+    const OPEN_WEATHER_MAP_API_KEY_URL = "***it's***a***secret***"
 
     $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
       const theTemp = response.list[0].temp.max;
