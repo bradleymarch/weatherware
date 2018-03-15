@@ -13,12 +13,10 @@ $(function() {
 
     $(".waitForIt").removeClass("waitForIt");
 
-    const zipCode = $("#location-input-id").val();
-    console.log(zipCode);
-    const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
-    const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
-
-    $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
+      const zipCode = $("#location-input-id").val();
+      const OPEN_WEATHER_MAP_API_KEY = "***it's***a***secret***";
+      const OPEN_WEATHER_MAP_API_KEY_URL = "***it's***a***secret***"
+      $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
       const theTemp = response.list[0].temp.max;
 
       const theConditions = response.list[0].weather[0].description;
