@@ -63,7 +63,7 @@ $(function() {
   });
      $("#temp_box1").on("click", function() {
       const zipCode = $("#location-input-id").val();
-      const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
+      const OPEN_WEATHER_MAP_API_KEY = SECRET HERE*;
       const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
       console.log(zipCode);
       $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
