@@ -37,7 +37,7 @@ function generateUserData() {
 	return {
 		username: faker.internet.userName(),
 		password: faker.internet.password(),
-		
+
 	}
 }
 
@@ -63,7 +63,7 @@ describe('Users API resource', function() {
 		return closeServer();
 	});
 
-	
+
 	describe('POST endpoint for login', function() {
 
 		it('should login user and return user account', function() {
@@ -72,7 +72,7 @@ describe('Users API resource', function() {
 			return agent
 			.post('/users/login')
 			.auth('testuser', 'password')
-			.then(_res => {				
+			.then(_res => {
 				res = _res;
 				res.should.have.status(200);
 				res.body.user.username.should.equal('testuser');
@@ -87,14 +87,14 @@ describe('Users API resource', function() {
 		it('should sign out the user and redirect', function() {
 			let agent = chai.request.agent(app);
 			return agent
-				.get('/users/logout') 
+				.get('/users/logout')
 				.auth('testuser', 'password')
-				.then(() => {				
+				.then(() => {
 					return agent.get('/users/logout')
 					.then(res => {
 						res.should.have.status(200);
-						res.redirects.should.have.lengthOf(1);							
-					})					
+						res.redirects.should.have.lengthOf(1);
+					})
 				});
 			});
 	});
@@ -105,15 +105,15 @@ describe('Users API resource', function() {
 
 			let testUsername = 'testuser2010';
 			let testPassword = 'password123';
-			
+
 			return chai.request(app)
 			.post('/users/register')
 			.send({username: testUsername, password: testPassword})
-			.then(res => {							
+			.then(res => {
 				res.should.have.status(201);
 				res.body.user.username.should.equal(testUsername);
 				res.body.user.should.include.keys(
-					'username', 'password');			
+					'username', 'password');
 				User.findOne({username: testUsername})
 				.then(user => {
 					user.should.exist;
@@ -135,13 +135,13 @@ describe('PATCH endpoint to update settings', function() {
 		        	tempSensitivity: "Always cold",
 		        	location: "12345",
 		        }
-		        
+
         				}
 			return agent
 				.get('/users/login') // first have to log in
 				.auth('testuser', 'password')
 				.then((res) => {
-					testEntry.id = res.body.user.adjustmentEntries[0].id; // gets id of entry to change				
+					testEntry.id = res.body.user.adjustmentEntries[0].id; // gets id of entry to change
 					return agent
 						.put('/users/settings')
 						.send(testEntry)
@@ -151,7 +151,7 @@ describe('PATCH endpoint to update settings', function() {
 							resEntry.username.should.equal(testEntry.username);
 							resEntry.password.should.equal(testEntry.password);
 							resEntry.settings.should.equal(testEntry.settings);
-							
+
 							return User
 								.findOne({username: 'testuser'})
 								.then(user => {
@@ -159,29 +159,29 @@ describe('PATCH endpoint to update settings', function() {
 									entry.username.should.equal(testEntry.username);
 									entry.password.should.equal(testEntry.password);
 									entry.settings.should.equal(testEntry.settings);
-									
-								})		
-						});			
+
+								})
+						});
 				});
 		});
 	});*/
-describe('DELETE endpoint for user account', function() {
-
-		it('should delete the user account', function() {
-			let agent = chai.request.agent(app);
-			
-					return agent
-						.delete('/users')
-						//.delete(res.body.user._id)
-						.then(res => {
-							res.should.have.status(200);
-							/*return User
-								.findOne({username: 'testuser'})
-								.then(res => {
-									should.not.exist(res);
-								})
-								*/
-						})					
-		});
-	});
-});
+// describe('DELETE endpoint for user account', function() {
+//
+// 		it('should delete the user account', function() {
+// 			let agent = chai.request.agent(app);
+//
+// 					return agent
+// 						.delete('/users')
+// 						//.delete(res.body.user._id)
+// 						.then(res => {
+// 							res.should.have.status(200);
+// 							/*return User
+// 								.findOne({username: 'testuser'})
+// 								.then(res => {
+// 									should.not.exist(res);
+// 								})
+// 								*/
+// 						})
+// 		});
+// 	});
+// });
