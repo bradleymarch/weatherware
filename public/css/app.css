@@ -645,7 +645,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 h1 {
 	font-weight: normal;
 	margin-bottom: 0px;
-	margin-top: 0px;
+	/* margin-top: 0px; */
 	padding-top: 30px;
 }
 
