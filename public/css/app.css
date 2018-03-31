@@ -146,7 +146,7 @@ body {
 }
 
 .landing-view {
-		background: url("background.jpg") no-repeat center center fixed;
+		background: url("background.jpg") center center fixed;
 		height: 782px;
 		width: 100%;
 }
@@ -943,7 +943,9 @@ a:hover {
 }
 
 .navspan {
-		margin: 9px 200px 9px 150px !important;
+		margin: auto;
+		text-align: center;
+		display: block;
 }
 
 .dropdown-menu {
