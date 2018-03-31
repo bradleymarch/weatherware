@@ -1,5 +1,5 @@
 $(function() {
-  
+
   $(".js-hidden").removeClass('hidden');
   $(".js-login-link").addClass("hidden");
   const FORECAST = {
@@ -13,10 +13,12 @@ $(function() {
 
     $(".waitForIt").removeClass("waitForIt");
 
-      const zipCode = $("#location-input-id").val();
-      const OPEN_WEATHER_MAP_API_KEY = "***it's***a***secret***";
-      const OPEN_WEATHER_MAP_API_KEY_URL = "***it's***a***secret***"
-      $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
+    const zipCode = $("#location-input-id").val();
+    console.log(zipCode);
+    const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
+    const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
+
+    $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
       const theTemp = response.list[0].temp.max;
 
       const theConditions = response.list[0].weather[0].description;
@@ -34,7 +36,7 @@ $(function() {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
       }
 
-      else if (parseInt(roundedTemp)<= 50) 
+      else if (parseInt(roundedTemp)<= 50)
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
 
     });
@@ -45,17 +47,14 @@ $(function() {
       contentType: 'application/json',
       dataType: 'json',
     };
-
     $.ajax(locationPost).done(function (response) {
       if (response.body) {
         res.json(user);
-
       }
       else {
         $('.js-location-form')[0].reset();
-        
-      }
 
+      }
     });*/
   });
      $("#temp_box1").on("click", function() {
@@ -77,7 +76,7 @@ $(function() {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
       }
 
-      else if (parseInt(roundedTemp)<= 60 && ($("#temp_box1").is(":checked"))) 
+      else if (parseInt(roundedTemp)<= 60 && ($("#temp_box1").is(":checked")))
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
 
     });
@@ -101,7 +100,7 @@ $(function() {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
       }
 
-      else if (parseInt(roundedTemp)<= 40 && ($("#temp_box2").is(":checked"))) 
+      else if (parseInt(roundedTemp)<= 40 && ($("#temp_box2").is(":checked")))
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
     });
     });
@@ -125,7 +124,7 @@ $(function() {
           return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
         }
 
-        else if (parseInt(roundedTemp)<= 50 && ($("#temp_box3").is(":checked"))) 
+        else if (parseInt(roundedTemp)<= 50 && ($("#temp_box3").is(":checked")))
           return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
       });
   });
@@ -142,14 +141,14 @@ $(".js-logout-form").on("submit", function(event) {
   $.ajax(logout).done(function (response) {
     console.log('logged out');
   });
-  
+
 });
 $(".js-delete-user-form").on("submit", function(event) {
   location.href = "register.html";
   event.preventDefault();
- 
+
   const deleteUser = {
-    
+
     url: '/users',
     method: "DELETE",
     contentType: 'application/json',
@@ -159,7 +158,7 @@ $(".js-delete-user-form").on("submit", function(event) {
   $.ajax(deleteUser).done(function (response) {
     if (!response.user) {
       console.log("User deleted");
-      
+
     }
     else {
       location.href = "profile.html";
@@ -173,7 +172,6 @@ $(".js-delete-user-form").on("submit", function(event) {
 function displayApiError(error) {
  $(".error-notice").text(error);
 }
-
 function displayInvalidLocationError() {
  $(".error-notice").text("The location you entered is invalid.  Please select another one.");
 }
@@ -183,7 +181,6 @@ function displayInvalidLocationError() {
       const zipCode = $("#location-input-id").val();
       const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
       const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
-
         return $.ajax({
           url: OPEN_WEATHER_MAP_API_KEY_URL,
           method: 'PATCH',
