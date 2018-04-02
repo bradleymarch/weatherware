@@ -1,5 +1,5 @@
 $(function() {
-  
+
   $(".js-hidden").removeClass('hidden');
   $(".js-login-link").addClass("hidden");
   const FORECAST = {
@@ -13,18 +13,19 @@ $(function() {
 
     $(".waitForIt").removeClass("waitForIt");
 
-    const zipCode = $("#location-input-id").val();
-    console.log(zipCode);
-    const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
-    const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
+     const zipCode = $("#location-input-id").val();
+-    console.log(zipCode);
+-    //save this setting for user each time it is SET
+     const OPEN_WEATHER_MAP_API_KEY = "***it's***a***secret***";
+     const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
-    $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
-      const theTemp = response.list[0].temp.max;
+     $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
+       const theTemp = response.list[0].temp.max;
 
-      const theConditions = response.list[0].weather[0].description;
-      const roundedTemp = theTemp.toFixed();
-      const casedConditions = theConditions.toUpperCase();
-
+       const theConditions = response.list[0].weather[0].description;
+-      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
+       const roundedTemp = theTemp.toFixed();
+       const casedConditions = theConditions.toUpperCase();
       $(".js-temp-conditions").html('<p class="tempClass">Temperature' +': ' + roundedTemp + ' °F</p><p class="conditionsClass">Conditions' +': ' + casedConditions + '</p>');
 
 
@@ -36,7 +37,7 @@ $(function() {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
       }
 
-      else if (parseInt(roundedTemp)<= 50) 
+      else if (parseInt(roundedTemp)<= 50)
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
 
     });
@@ -55,14 +56,14 @@ $(function() {
       }
       else {
         $('.js-location-form')[0].reset();
-        
+
       }
 
     });*/
   });
      $("#temp_box1").on("click", function() {
       const zipCode = $("#location-input-id").val();
-      const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
+      const OPEN_WEATHER_MAP_API_KEY = SECRET HERE*;
       const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
       console.log(zipCode);
       $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
@@ -79,7 +80,7 @@ $(function() {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
       }
 
-      else if (parseInt(roundedTemp)<= 60 && ($("#temp_box1").is(":checked"))) 
+      else if (parseInt(roundedTemp)<= 60 && ($("#temp_box1").is(":checked")))
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
 
     });
@@ -103,7 +104,7 @@ $(function() {
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
       }
 
-      else if (parseInt(roundedTemp)<= 40 && ($("#temp_box2").is(":checked"))) 
+      else if (parseInt(roundedTemp)<= 40 && ($("#temp_box2").is(":checked")))
         return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
     });
     });
@@ -127,7 +128,7 @@ $(function() {
           return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants</p>");
         }
 
-        else if (parseInt(roundedTemp)<= 50 && ($("#temp_box3").is(":checked"))) 
+        else if (parseInt(roundedTemp)<= 50 && ($("#temp_box3").is(":checked")))
           return $(".js-outfit-rec").html("<p>Long Sleeves<br>Long Pants<br>Jacket</p>");
       });
   });
@@ -144,14 +145,14 @@ $(".js-logout-form").on("submit", function(event) {
   $.ajax(logout).done(function (response) {
     console.log('logged out');
   });
-  
+
 });
 $(".js-delete-user-form").on("submit", function(event) {
   location.href = "register.html";
   event.preventDefault();
- 
+
   const deleteUser = {
-    
+
     url: '/users',
     method: "DELETE",
     contentType: 'application/json',
@@ -161,7 +162,7 @@ $(".js-delete-user-form").on("submit", function(event) {
   $.ajax(deleteUser).done(function (response) {
     if (!response.user) {
       console.log("User deleted");
-      
+
     }
     else {
       location.href = "profile.html";

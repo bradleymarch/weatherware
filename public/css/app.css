@@ -3,7 +3,6 @@
 }
 
 html {
-	/*background: url("background.jpg") no-repeat center center fixed;*/
 	font-family: 'Gruppo', cursive;
 	-webkit-animation: fadein 2s;
 	color: white;
@@ -140,14 +139,14 @@ body {
 }
 
 .about-content {
-	font-size: 20px;
+	font-size: 26px;
 	width: 67%;
 	color: white;
 	margin: auto;
 }
 
 .landing-view {
-		background: url("background.jpg") no-repeat center center fixed;
+		background: url("background.jpg") center center fixed;
 		height: 782px;
 		width: 100%;
 }
@@ -243,7 +242,6 @@ body {
 	z-index: 900;
 	margin: auto;
 	border-radius: 2px;
-	/*border: 1.5px solid #71ADB5;*/
 	box-sizing: border-box;
 }
 
@@ -255,7 +253,6 @@ body {
 	z-index: 900;
 	margin: auto;
 	border-radius: 2px;
-	/*border: 1.5px solid #71ADB5;*/
 	box-sizing: border-box;
 
 }
@@ -269,7 +266,6 @@ body {
 	padding: 0px;
 	box-sizing: border-box;
 	display: block;
-	/*background-color: rgba(0, 0, 0, 0.75);*/
  }
 
  .register-overlay::before {
@@ -281,12 +277,10 @@ body {
 	bottom: 0;
 	background-image: url("background.jpg");
 	background-repeat: no-repeat;
-	/*background-size: 100vw 100vh;*/
 	width: 360px;
 	height: 100%;
 	background-position: center center;
 	background-attachment: fixed;
-	/*background-color: rgba(0, 0, 0, 0.75);*/
 	filter: blur(50px);
 	display: block;
 	box-sizing: border-box;
@@ -315,12 +309,10 @@ body {
 	bottom: 0;
 	background-image: url("background.jpg");
 	background-repeat: no-repeat;
-	/*background-size: 100vw 100vh;*/
 	width: 360px;
 	height: 100%;
 	background-position: center center;
 	background-attachment: fixed;
-	/*background-color: rgba(0, 0, 0, 0.75);*/
 	filter: blur(50px);
 	display: block;
 	box-sizing: border-box;
@@ -335,33 +327,6 @@ body {
 	font-style: italic;
 
 }
-/*
-.type {
-
-  white-space: nowrap;
-  overflow: hidden;
-  margin: 0 auto;
-  animation: type 1.5s steps(200, end);
-}
-
-@keyframes type{
-  from { width: 0; }
-  to {width: 100%;}
-}
-
-.type2 {
-
-  white-space: nowrap;
-  overflow: hidden;
-  margin: 0 auto;
-  animation: type 1s steps(200, end);
-}
-
-@keyframes type2{
-  from { width: 0; }
-  to {width: 100%;}
-}
-*/
 
 .cloud-image {
 
@@ -426,13 +391,13 @@ body {
 	text-align: center;
 	padding-top: 36px;
 	padding-bottom: 24px;
-	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	z-index: 900;
 	font-weight: normal;
 }
 
 .account-labels {
 	display: block;
+	font-size: 20px;
 	padding-bottom: 8px;
 }
 
@@ -450,7 +415,7 @@ body {
 
 .register {
 
-	font-size: 14px;
+	font-size: 18px;
 	margin: auto;
 	font-family: 'Gruppo', cursive;
 	text-decoration: none;
@@ -496,7 +461,6 @@ body {
 .login-button {
 	color: white;
 	font-size: 16px;
-	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	font-family: 'Gruppo', cursive;	border-radius: 2px;
 	background: #176D81;
 	opacity: 0.75;
@@ -515,12 +479,7 @@ body {
 	opacity: 1.0;
 
 }
-/*
-.login-button:focus {
-	outline:0;
 
-}
-*/
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 	color: #D8DFE2;
 	opacity: 0.9;
@@ -686,7 +645,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 h1 {
 	font-weight: normal;
 	margin-bottom: 0px;
-	margin-top: 0px;
+	/* margin-top: 0px; */
 	padding-top: 30px;
 }
 
@@ -726,8 +685,7 @@ h1 {
 }
 
 .today {
-	font-size: 16px;
-	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
+	font-size: 26px;
 	font-family: 'Gruppo', cursive;
 	display: inline-block;
 	margin: 0 0 15px 0;
@@ -776,26 +734,17 @@ h1 {
     animation: flickerAnimation 7s infinite;
 }
 
-.animate-flicker-testimonials {
-	-webkit-animation: flickerAnimation 11s infinite;
-	-moz-animation: flickerAnimation 11s infinite;
-   -o-animation: flickerAnimation 11s infinite;
-    animation: flickerAnimation 11s infinite;
-}
-
 .sidebar {
 	flex-basis: 33.33%;
 	float: left;
-	width: 140px;
-	height: 520px;
+	width: 200px;
+	height: 540px;
 	font-family: 'Gruppo', cursive;
-	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	margin-left: 20px;
 	margin-top: 5px;
 	border-radius: 2px;
 	z-index: 900;
 	background-color: #71ADB5;
-	margin-bottom: 20px;
 }
 
 .main {
@@ -804,6 +753,10 @@ h1 {
 	position: relative;
 	display: inline-block;
 	margin-right: 160px;
+}
+
+.more-empty-register-space, .more-empty-login-space {
+	display: none;
 }
 
 .forecast-data {
@@ -843,7 +796,6 @@ h1 {
 	bottom: 0;
 	background-image: url("background.jpg");
 	background-repeat: no-repeat;
-	/*background-size: 100vw 100vh;*/
 	width: 360px;
 	height: 370px;
 	background-position: center center;
@@ -869,7 +821,7 @@ h1 {
 }
 .forecast-container {
 
-	margin: auto;
+	margin-bottom: auto;
 	display: inline-block;
 	height: 500px;
 	box-sizing: border-box;
@@ -877,7 +829,6 @@ h1 {
 .tomorrow-button {
 	color: white;
 	font-size: 16px;
-	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	font-family: 'Gruppo', cursive;
 	border-radius: 2px;
 	background: #176D81;
@@ -904,43 +855,10 @@ h1 {
 	color: white;
 	font-weight: normal;
 	text-align: center;
-	font-size: 16px;
-
-}
-/*
-.sidebar-overlay {
-	position: relative;
-	width: 140px;
-	height: 100%;
-	margin: auto;
-	border-radius: 10px;
-	margin-left: 10px;
-	margin-top: 70px;
-	box-sizing: border-box;
-	display: block;
-	background-color: rgba(0, 0, 0, 0.75);
-
+	font-size: 24px;
+	margin-top: 0px;
 }
 
-.sidebar-overlay::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	background-image: url("sidebar.jpg");
-	background-repeat: no-repeat;
-	background-size: 100vw 100vh;
-	background-position: center center;
-	background-attachment: fixed;
-	background-color: rgba(0, 0, 0, 0.75);
-	filter: blur(15px);
-	display: block;
-	z-index: -1;
-
-}
-*/
 .settings-title {
 
 	font-size: 20px;
@@ -966,24 +884,7 @@ h1 {
 	margin: auto;
 	z-index: 900;
 }
-/*
-.location-input::-moz- { Firefox 19+
-	font-size: 16px;
-	font-family: 'Gruppo', cursive;
-	padding:10px 10px 10px 5px;
-	display:block;
-	width: 88px;
-	height: 20px;
-	border: none;
-	color: white !important;
-	border-bottom:1px solid white;
-	background: transparent;
-	outline: none;
-	margin: auto;
-	z-index: 900;
 
-}
-*/
 .my-weatherwear-heading {
 	font-family: 'Londrina Outline', cursive;
 	margin-bottom: 0px;
@@ -993,7 +894,7 @@ h1 {
 
 .radio-label-font {
 	font-weight: normal;
-	font-size: 12px;
+	font-size: 20px;
 	margin: 0px;
 	color: white;
 
@@ -1016,7 +917,7 @@ button {
 	left: 0;
 	right: 0;
 	top: 0;
-	height: 36px;
+	height: 48px;
 	color: white;
 	background-color: white;
 	display: inline-block;
@@ -1032,11 +933,9 @@ button {
 	display: inline-block;
 	color: #71ADB5;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 20px;
 	text-decoration: none;
-	/*margin-top: 20px;
-	margin-left: 170px;*/
-	margin: 9px 80px 9px 50px;
+	margin: 10px 80px 10px 50px;
 }
 
 a:hover {
@@ -1044,7 +943,9 @@ a:hover {
 }
 
 .navspan {
-		margin: 9px 200px 9px 150px !important;
+		margin: auto;
+		text-align: center;
+		display: block;
 }
 
 .dropdown-menu {
@@ -1067,6 +968,22 @@ a:hover {
 @media screen and (min-width : 0px) and  (max-width : 1154px) {
 .settings-title {
 	display: none;
+}
+
+.login-container, .register-container, {
+	margin-top: 300px;
+	height: 900px;
+}
+.register-overlay, .login-overlay {
+	margin-top: 300px;
+	height: 450px;
+}
+
+.register-view, .login-view {
+	height: 1745px !important;
+}
+.account-labels {
+	margin-top: 40px;
 }
 .settings-headers {
 	margin-top: -10px;
@@ -1095,30 +1012,26 @@ a:hover {
 	padding-bottom: 10px;
 }
 
-.floating-label {
-	font-size: 24px !important;
-}
-
-.floating-label-input {
-	font-size: 24px !important;
-
-
-}
-
 .radio-label-font {
 	font-size: 20px !important;
 }
 
 .sidebar {
 	font-size: 24px !important;
-	height: 80%;
-	margin-top: -60px !important;
-	padding-bottom: 2px;
+	height: 700px;
+	margin-top: 180px !important;
 	padding-top: 10px;
 
 }
-
-
+.profile-heading-div {
+	padding-top: 100px;
+}
+.main {
+	margin-top: 280px;
+}
+.profile-view {
+	height: 150px !important;
+}
 .today {
 	font-size: 30px !important;
 }
@@ -1140,7 +1053,8 @@ button {
 }
 
 .profile-view {
-	height: 900px !important;
+	height: 1700px !important;
+
 }
 
 a {
@@ -1150,15 +1064,19 @@ a {
 
 }
 
+	.floating-label {
+		font-size: 24px !important;
+	}
+
+	.floating-label-input {
+		font-size: 24px !important;
+	}
+
 @media screen and (max-width: 1155px) {
   .testimonial1, .testimonial2 {
   	display: none;
   }
-/*
-  .navbar a:not(.navbar:first-child) {
-  	display: none;
-  }
-*/
+
   .navbar a {
     float: right;
     display: block;
@@ -1172,8 +1090,8 @@ a {
 
   }
   .cloud-anchor {
-	display: block !important;
-	position: fixed;
+		display: block !important;
+		position: fixed;
 	}
    .cloud-image {
    	width: 390px;
@@ -1194,11 +1112,6 @@ a {
   	 right: 0;
 	}
 
- /* nav img:hover ~ .dropdown-menu {
-  	display: block;
-
-  	}
-*/
   nav img:hover {
 	cursor: pointer;
 	cursor: hand;
@@ -1271,7 +1184,6 @@ a {
 	font-size: 16px;
 	font-family: 'Gruppo', cursive;
 	border-radius: 2px;
-	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
 	opacity: 0.75;
 	height: 36px;
