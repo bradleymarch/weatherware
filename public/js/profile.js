@@ -16,7 +16,7 @@ $(function() {
      const zipCode = $("#location-input-id").val();
 -    console.log(zipCode);
 -    //save this setting for user each time it is SET
-     const OPEN_WEATHER_MAP_API_KEY = "***it's***a***secret***";
+     const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
      const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
      $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
