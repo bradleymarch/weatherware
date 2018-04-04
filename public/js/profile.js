@@ -14,8 +14,8 @@ $(function() {
     $(".waitForIt").removeClass("waitForIt");
 
      const zipCode = $("#location-input-id").val();
--    console.log(zipCode);
--    //save this setting for user each time it is SET
+     console.log(zipCode);
+    //save this setting for user each time it is SET
      const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
      const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
 
@@ -23,8 +23,9 @@ $(function() {
        const theTemp = response.list[0].temp.max;
 
        const theConditions = response.list[0].weather[0].description;
--      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
+      //function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}
        const roundedTemp = theTemp.toFixed();
+       console.log(roundedTemp);
        const casedConditions = theConditions.toUpperCase();
       $(".js-temp-conditions").html('<p class="tempClass">Temperature' +': ' + roundedTemp + ' °F</p><p class="conditionsClass">Conditions' +': ' + casedConditions + '</p>');
 
@@ -63,7 +64,7 @@ $(function() {
   });
      $("#temp_box1").on("click", function() {
       const zipCode = $("#location-input-id").val();
-      const OPEN_WEATHER_MAP_API_KEY = SECRET HERE*;
+      const OPEN_WEATHER_MAP_API_KEY = "98500b30bcf94df7d89fffc470786b49";
       const OPEN_WEATHER_MAP_API_KEY_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + ",us" + "&" + "units=imperial" + "&" + "appid=" + OPEN_WEATHER_MAP_API_KEY;
       console.log(zipCode);
       $.getJSON(OPEN_WEATHER_MAP_API_KEY_URL, { zip: zipCode }, function(response) {
