@@ -3,7 +3,7 @@
 }
 
 html {
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	-webkit-animation: fadein 2s;
 	color: white;
 }
@@ -30,7 +30,7 @@ body {
 .delete-button {
 	color: white;
 	font-size: 10px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	border-radius: 2px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
@@ -49,7 +49,7 @@ body {
 .logout-button {
 	color: white;
 	font-size: 12px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	border-radius: 2px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
@@ -95,7 +95,7 @@ body {
 .save-controls-button {
 	color: white;
 	font-size: 14px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	border-radius: 2px;
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	background: #176D81;
@@ -417,7 +417,7 @@ body {
 
 	font-size: 18px;
 	margin: auto;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	text-decoration: none;
 	color: #0D3446;
 	padding-bottom: 10px;
@@ -444,7 +444,7 @@ body {
 
 	color: #176D81;
 	font-size: 24px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	text-align: left;
 	padding-left: 4px;
 	border-radius: 2px
@@ -461,7 +461,7 @@ body {
 .login-button {
 	color: white;
 	font-size: 16px;
-	font-family: 'Gruppo', cursive;	border-radius: 2px;
+	font-family: 'Josefin Sans', sans-serif;	border-radius: 2px;
 	background: #176D81;
 	opacity: 0.75;
 	box-sizing: border-box;
@@ -531,7 +531,7 @@ body {
 }
 .floating-label-input {
 	font-size:18px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	padding:10px 10px 10px 5px;
 	display:block;
 	width:100%;
@@ -552,7 +552,7 @@ body {
 	/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);*/
 	font-size:14px;
 	font-weight:normal;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	position:absolute;
 	pointer-events:none;
 	left:5px;
@@ -681,12 +681,12 @@ h1 {
 	text-align: center;
 	font-weight: normal;
 	margin: auto;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 .today {
 	font-size: 26px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	display: inline-block;
 	margin: 0 0 15px 0;
 	z-index: 900;
@@ -739,7 +739,7 @@ h1 {
 	float: left;
 	width: 200px;
 	height: 540px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	margin-left: 20px;
 	margin-top: 5px;
 	border-radius: 2px;
@@ -760,7 +760,7 @@ h1 {
 }
 
 .forecast-data {
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	font-size: 24px;
 	height: 370px;
 	width: 360px;
@@ -770,7 +770,7 @@ h1 {
 }
 
 .temp-conditions {
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	font-size: 24px;
 }
 
@@ -812,7 +812,7 @@ h1 {
 }
 
 .outfit-rec {
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	color: white;
 	padding-bottom: 30px;
 	font-size: 36px;
@@ -829,7 +829,7 @@ h1 {
 .tomorrow-button {
 	color: white;
 	font-size: 16px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	border-radius: 2px;
 	background: #176D81;
 	opacity: 0.75;
@@ -871,7 +871,7 @@ h1 {
 
 .location-input {
 	font-size: 22px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	padding:3px 3px 3px 2px;
 	display:block;
 	width: 88px;
@@ -935,7 +935,7 @@ button {
 	text-decoration: none;
 	font-size: 20px;
 	text-decoration: none;
-	margin: 10px 80px 10px 50px;
+	margin: 20px 80px 10px 50px;
 }
 
 a:hover {
@@ -1182,7 +1182,7 @@ a {
 .location-button {
 	color: white;
 	font-size: 16px;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	border-radius: 2px;
 	background: #176D81;
 	opacity: 0.75;
