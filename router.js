@@ -2,7 +2,6 @@ const express = require('express');
 const {BasicStrategy} = require('passport-http');
 const jsonParser = require('body-parser').json();
 const passport = require('passport');
-const uuid = require('uuid');
 const {User} = require('./models');
 const router = express.Router();
 
@@ -130,7 +129,7 @@ router.post('/location', (req, res, err) => {
     if (err) res.send(err);
 
     res.json(user);
-  }); 
+  });
 
 });
 
@@ -179,7 +178,7 @@ router.delete('/', loggedIn, (req, res) => {
   .findByIdAndRemove(req.user._id)
   .exec()
   .then(doc => {
-    return res.status(200).end(); 
+    return res.status(200).end();
   })
   .catch(err => next(err));
 });
