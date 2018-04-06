@@ -931,7 +931,7 @@ button {
 }
 .navbar a {
 	display: inline-block;
-	color: #71ADB5;
+	color: #0D3446;
 	text-decoration: none;
 	font-size: 20px;
 	text-decoration: none;
@@ -939,7 +939,7 @@ button {
 }
 
 a:hover {
-	color: #0D3446;
+	color: #71ADB5;
 }
 
 .navspan {
