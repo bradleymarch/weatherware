@@ -642,6 +642,10 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 }
 
+.my-heading {
+	margin-left: 65px;
+}
+
 h1 {
 	font-weight: normal;
 	margin-bottom: 0px;
