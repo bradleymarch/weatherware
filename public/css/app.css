@@ -133,7 +133,7 @@ body {
 	width: 100%;
 }
 .about-heading {
-	font-family: 'Londrina Outline', cursive;
+	font-family: 'Josefin Outline', cursive;
 	margin-top: 0;
 	font-size: 48px;
 }
@@ -366,7 +366,6 @@ body {
 
 
 .testimonial2 {
-
 	text-align: right;
 	margin: -90px 140px 0 20px;
 }
@@ -382,11 +381,11 @@ body {
         margin: -118px 140px 0 20px;
     }
 }
-.login-logo {
 
+.login-register-logo {
 	font-size: 36px;
-	font-family: 'Londrina Outline', cursive;
-	margin: auto;
+	font-family: 'Josefin Sans', sans-serif;
+	margin: 0 0 50px 0;
 	color: white;
 	text-align: center;
 	padding-top: 36px;
@@ -402,12 +401,12 @@ body {
 }
 
 .heading {
-	font-family: 'Londrina Outline', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	font-size: 140px;
 	text-align: center;
 	color: white;
 	margin: 0 auto;
-	padding-top: 50px;
+	padding-top: 100px;
 	padding-bottom: 5px;
 	text-shadow: 1.25px 1.25px 1.25px rgba(0, 0, 0, 0.75);
 	z-index: 900;
@@ -665,9 +664,8 @@ h1 {
 	color: white;
 	font-weight: normal;
 	margin-top: 0px;
-	font-family: 'Londrina Outline', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 }
-
 
 
 .profile-nav {
@@ -889,7 +887,7 @@ h1 {
 }
 
 .my-weatherwear-heading {
-	font-family: 'Londrina Outline', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	margin-bottom: 0px;
 	margin-top: 10px;
 	z-index: 900;
