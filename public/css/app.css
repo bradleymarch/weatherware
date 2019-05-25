@@ -147,7 +147,7 @@ body {
 
 .landing-view {
 		background: url("background.jpg") center center fixed;
-		height: 782px;
+		height: 950px;
 		width: 100%;
 }
 
@@ -406,7 +406,7 @@ body {
 	text-align: center;
 	color: white;
 	margin: 0 auto;
-	padding-top: 100px;
+	padding-top: 200px;
 	padding-bottom: 5px;
 	text-shadow: 1.25px 1.25px 1.25px rgba(0, 0, 0, 0.75);
 	z-index: 900;
