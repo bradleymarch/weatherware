@@ -642,7 +642,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 .my-heading {
-	margin-left: 65px;
+	margin-left: 45px;
 }
 
 h1 {
@@ -821,7 +821,7 @@ h1 {
 
 }
 .forecast-container {
-	margin-left: -80px;
+	margin-left: -110px;
 	margin-bottom: auto;
 	display: inline-block;
 	height: 500px;
