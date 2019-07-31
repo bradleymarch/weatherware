@@ -969,7 +969,7 @@ a:hover {
 	display: none !important;
 }
 
-@media screen and (min-width : 0px) and  (max-width : 1154px) {
+@media screen and (min-width : 0px) and (max-width : 1154px) {
 .settings-title {
 	display: none;
 }
@@ -1013,7 +1013,7 @@ a:hover {
 
 .about-view {
 	height: 100% !important;
-	padding-bottom: 10px;
+	padding-bottom: 100px;
 }
 
 .radio-label-font {
