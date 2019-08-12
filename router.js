@@ -5,12 +5,6 @@ const passport = require('passport');
 const {User} = require('./models');
 const router = express.Router();
 
-router.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 router.use(jsonParser);
 
 const basicStrategy = new BasicStrategy((username, password, callback) => {
@@ -153,7 +147,6 @@ router.get('/', (req, res) => {
   .find({})
   .exec()
   .then(doc => {
-    console.log('hi');
     if (doc) { return res.json(doc) }
   })
   .catch(err => next(err));
