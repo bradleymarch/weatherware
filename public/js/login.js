@@ -1,16 +1,14 @@
 
 'use strict';
 
-function loginUser(username, password) {
-
+function loginUser() {
   var settings = {
     url: "/users/login",
     method: "POST",
-    data: JSON.stringify({username: username, password: password}),
+    // data: JSON.stringify({username: username, password: password}),
     contentType: 'application/json',
     dataType: 'json',
   };
-
   $.ajax(settings).done(function (response) {
     if (response.user) {
       const getUser = {
@@ -20,20 +18,15 @@ function loginUser(username, password) {
         contentType: 'application/json',
         dataType: 'json',
       };
-
       $.ajax(getUser).done(function (response) {
         console.log('Ya:', response);
         if (response.user) {
           $('.js-success-message2').html("Welcome, 'username'!");
-
         }
       else {
         $('.js-error-message').html('Could not load user');
-
       };
-
     });
-
     }
     else {
       $('.js-login-form')[0].reset();
@@ -45,11 +38,9 @@ function loginUser(username, password) {
 function watchLogIn() {
   $('.js-login-form').submit(function(event) {
     event.preventDefault();
-    var username = $("#login_form_username").val();
-    var password = $("#login_form_password").val();
-
-    loginUser(username, password);
-
+    // var username = $("#login_form_username").val();
+    // var password = $("#login_form_password").val();
+    loginUser();
   });
 }
 
